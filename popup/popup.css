@@ -1,0 +1,44 @@
+body {
+  width: 400px;
+  height: 250px;
+}
+div {
+  padding: 5px;
+}
+.openOceanSearch {
+  display: flex;
+  justify-content: center;
+}
+.openOceanSearch img {
+  width: 30px;
+  height: 30px;
+}
+.openOceanSearch button {
+  margin: 0px 5%;
+  width: 310px;
+}
+
+.language {
+  display: flex;
+  justify-content: space-evenly;
+}
+label {
+  font-size: 20px;
+}
+.language select {
+  width: 100px;
+}
+
+.tools {
+  margin: 0px 22px;
+}
+fieldset {
+  font-size: 15px;
+}
+
+.download {
+  text-align: center;
+}
+.download button{
+  width: 200px;
+}

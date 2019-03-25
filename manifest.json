@@ -1,42 +1,45 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
+  "name": "Ocean Search 2.0",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
+  "description": "This extension popup ocean search",
   "default_locale": "en",
   "browser_action": {
-    "default_icon": "icons/icon19.png",
-    "default_title": "browser action demo",
-    "default_popup": "src/browser_action/browser_action.html"
+    "default_icon": "icons/ocean.png",
+    "default_title": "Ocean Search",
+    "default_popup": "popup/popup.html"
   },
   "permissions": [
-    "clipboardRead",
-    "clipboardWrite",
-    "https://search-widget.current.build.ocean.isddesign.com/*",
-    "https://cdn.jsdelivr.net/*"
+    "tabs",
+    "http://*/*",
+    "https://*/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://www.facebook.com/*",
+        "https://www.google.com/",
+        "https://bahai-library.com/*",
+        "https://*.bahai.org/",
+        "https://reference.bahai.org/en/",
+        "https://www.youtube.com/",
+        "https://www.bic.org/",
+        "https://www.reddit.com/",
+        "https://www.yahoo.com/",
+        "https://*.wikipedia.org/wiki/*",
+        "https://www.baidu.com/"
       ],
       "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.google.com/*"
+        "content/content.css"
       ],
       "js": [
-        "src/inject/inject.js"
-      ]
+        "lib/jquery.min.js",
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
     }
-  ]
+  ],
+  "background": {
+    "js": "background.js"
+  }
 }
