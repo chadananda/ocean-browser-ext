@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "This extension popup ocean search",
+  "icons": {
+    "128": "/icons/ocean.png",
+    "48": "/icons/ocean.png",
+    "16": "/icons/ocean.png"
+  },
   "default_locale": "en",
   "browser_action": {
     "default_icon": "icons/ocean.png",
