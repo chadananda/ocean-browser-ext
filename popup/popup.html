@@ -3,22 +3,23 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="popup.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="popup.css" >
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="../lib/jquery.min.js"></script>
 </head>
 
 <body>
-  <div id="openOceanSearch" class="openOceanSearch">
+  <div class="openOceanSearch">
     <img src="../icons/ocean.png" alt="logo">
-    <button type="button">
+    <button id="openOceanSearch" type="button">
       <i class="fa fa-search" style="font-size: 20px;"></i>
       <label>2.0 Search, Alt-S</label>
     </button>
   </div>
-  <div id="language" class="language">
+  <div class="language">
     <i class="fa fa-language" style="font-size: 20px;"></i>
     <label>Language</label>
-    <select>
+    <select id="language">
       <option value="en">English</option>
       <option value="fa">Persian</option>
       <option value="ar">Arabic</option>
@@ -27,17 +28,19 @@
   <div id="tools" class="tools">
     <fieldset>
       <legend>Editing Tools</legend>
-      <input type="checkbox" name="key_mapping" value="key_mapping">Shortcut Characters<br>
-      <input type="checkbox" name="auto_correct" value="auto_correct">Autocorrect Common<br>
-      <input type="checkbox" name="spellcheck" value="spellcheck">Spellcheck Terms<br><br>
+      <input type="checkbox" id="key_mapping" value="key_mapping">Shortcut Characters<br>
+      <input type="checkbox" id="auto_correct" value="auto_correct">Autocorrect Common<br>
+      <input type="checkbox" id="spellcheck" value="spellcheck">Spellcheck Terms<br><br>
     </fieldset>
   </div>
-  <div id="download" class="download">
-    <button type="button">
+  <div class="download">
+    <button id="download" type="button">
       <i class="fa fa-download" style="font-size: 20px;"></i>
       <label>
         Ocean 2.0 App
       </label>
     </button>
   </div>
+
+  <script type="text/javascript" src="popup.js"></script>
 </body>
