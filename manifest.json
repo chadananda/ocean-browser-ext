@@ -48,7 +48,6 @@
     "scripts": [
       "lib/jquery.min.js",
       "lib/vue.js",
-      "lib/search-widget-ocean.min.js",
       "background.js"
     ],
     "persistent": false
