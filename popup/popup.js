@@ -2,14 +2,26 @@
 
 var nodes = {
   openOceanSearch: document.getElementById('open_ocean_search'),
-  language: document.getElementById('language_letter'),
-  tools: document.getElementById('tools'),
-  download: document.getElementById('download')
+  openOceanSearchLetter: document.getElementById('open_ocean_search_letter'),
+  language_letter: document.getElementById('language_letter'),
+  language: document.getElementById('language'),
+  tools: {
+    edit_tool: document.getElementById('tools'),
+    legend: document.getElementById('edit_tool_letter'),
+    key_mapping: document.getElementById('key_mapping'),
+    auto_correct: document.getElementById('auto_correct'),
+    spell_check: document.getElementById('spell_check')
+  },
+  download: {
+    button: document.getElementById('download'),
+    letter: document.getElementById('download_letter')
+  }
+  
 }
 const downloadLink = "https://sacred-traditions.org/ocean/";
 const locales = {
   en: {
-    openOceanSearch: 'Ocean 2.0 Search, Alt-S',
+    openOceanSearchLetter: 'Ocean 2.0 Search, Alt-S',
     language: 'Language',
     editTool: 'Editing Tools',
     keyMapping: 'Shortcut Characters',
@@ -18,7 +30,7 @@ const locales = {
     download: 'Ocean 2.0 App'
   },
   ar: {
-    openOceanSearch: 'بحث المحيط 2.0 ، Alt-S',
+    openOceanSearchLetter: 'محيط 2.0 بحث, Alt-S',
     language: 'لغة',
     editTool: 'أدوات التحرير',
     keyMapping: 'أحرف الاختصار',
@@ -27,7 +39,7 @@ const locales = {
     download: 'محيط 2.0 التطبيق'
   },
   fa: {
-    openOceanSearch: 'اقیانوس 2.0 جستجو، Alt-S',
+    openOceanSearchLetter: 'اقیانوس 2.0 جستجو، Alt-S',
     language: 'زبان',
     editTool: 'ویرایش ابزارها',
     keyMapping: 'شخصیت های میانبر',
@@ -37,17 +49,17 @@ const locales = {
   }
 }
 function setListeners() {
-  function changePopupUI(lang) {
-    // nodes.openOceanSearch.innerHTML = locales[lang].openOceanSearch;
-    // nodes.language.innerHTML = locales[lang].language;
-    console.log(nodes.language.innerHTML);
-    console.log(locales[lang].language);
-  }
   function openOceanSearch(){
 
   }
-  function openDownloadPage() {
-    chrome.tabs.create({ url: downloadLink });
+  function changePopupUI(lang) {
+    nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
+    nodes.language_letter.innerHTML = locales[lang].language;
+    nodes.tools.legend.innerHTML = locales[lang].editTool;
+    nodes.tools.key_mapping.innerHTML = locales[lang].keyMapping;
+    nodes.tools.auto_correct.innerHTML = locales[lang].autoCorrect;
+    nodes.tools.spell_check.innerHTML = locales[lang].spellCheck;
+    nodes.download.letter.innerHTML = locales[lang].download;
   }
   function checkBoxHandler(handler){
     if (handler.checked) {
@@ -56,28 +68,32 @@ function setListeners() {
       console.log('unchecked');
     }
   }
+  function openDownloadPage() {
+    chrome.tabs.create({ url: downloadLink });
+  }
+  nodes.openOceanSearch.addEventListener('click', function(){
+    openOceanSearch();
+  })
   nodes.language.onchange = function() {
     var value = this.options[this.selectedIndex].value;
     if (value == 'ar') changePopupUI('ar');
     else if (value == 'fa') changePopupUI('fa');
     else changePopupUI('en');
   }
-  nodes.tools.querySelector('input[name=key_mapping]').addEventListener('change', function(){
+  nodes.tools.edit_tool.querySelector('input[name=key_mapping]').addEventListener('change', function(){
     checkBoxHandler(this);
   })
-  nodes.tools.querySelector('input[name=auto_correct]').addEventListener('change', function(){
+  nodes.tools.edit_tool.querySelector('input[name=auto_correct]').addEventListener('change', function(){
     checkBoxHandler(this);
   })
-  nodes.tools.querySelector('input[name=spell_check]').addEventListener('change', function(){
+  nodes.tools.edit_tool.querySelector('input[name=spell_check]').addEventListener('change', function(){
     checkBoxHandler(this);
   })
-  nodes.download.addEventListener('click', function(){
+  nodes.download.button.addEventListener('click', function(){
     openDownloadPage()
   })
   
-  // nodes.openOceanSearch.addEventListener('click', function(){
-  //   openOceanSearch();
-  // })
+  
 
 }
 setListeners();
