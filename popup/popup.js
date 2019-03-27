@@ -16,10 +16,14 @@ function setListeners() {
   }
   function checkBoxHandler(handler){
     if (handler.checked) {
-      console.log(handler.value)
+      console.log(handler.value);
     } else {
-      console.log('unchecked')
+      console.log('unchecked');
     }
+  }
+  nodes.language.onchange = function() {
+    var value = this.options[this.selectedIndex].value;
+    if (value == 'en') changePopup()
   }
   nodes.tools.querySelector('input[name=key_mapping]').addEventListener('change', function(){
     checkBoxHandler(this);

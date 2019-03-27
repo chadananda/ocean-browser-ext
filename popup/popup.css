@@ -5,15 +5,15 @@ body {
 div {
   padding: 5px;
 }
-.openOceanSearch {
+.open_ocean_search {
   display: flex;
   justify-content: center;
 }
-.openOceanSearch img {
+.open_ocean_search img {
   width: 30px;
   height: 30px;
 }
-.openOceanSearch button {
+.open_ocean_search button {
   margin: 0px 5%;
   width: 310px;
 }
@@ -27,6 +27,7 @@ label {
 }
 .language select {
   width: 100px;
+  font-size: 15px;
 }
 
 .tools {
