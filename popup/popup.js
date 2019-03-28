@@ -92,8 +92,5 @@ function setListeners() {
   nodes.download.button.addEventListener('click', function(){
     openDownloadPage()
   })
-  
-  
-
 }
 setListeners();
