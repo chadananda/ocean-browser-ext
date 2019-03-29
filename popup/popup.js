@@ -50,7 +50,10 @@ const locales = {
 }
 function setListeners() {
   function openOceanSearch(){
-
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, {cmd: "openPopup"}, function() {
+      });
+    });
   }
   function changePopupUI(lang) {
     nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
@@ -94,3 +97,4 @@ function setListeners() {
   })
 }
 setListeners();
+

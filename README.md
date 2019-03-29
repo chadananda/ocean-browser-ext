@@ -20,3 +20,16 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
   * [  ] Autocorrect common words
   * [  ] Spell check accented names & offer suggestions
 
+### referrals ###
+  "https://www.facebook.com/*",
+  "https://www.google.com/",
+  "https://bahai-library.com/*",
+  "https://*.bahai.org/",
+  "https://reference.bahai.org/en/",
+  "https://www.youtube.com/",
+  "https://www.bic.org/",
+  "https://www.reddit.com/",
+  "https://www.yahoo.com/",
+  "https://*.wikipedia.org/wiki/*",
+  "https://www.baidu.com/"
+

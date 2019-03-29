@@ -17,7 +17,12 @@
   "permissions": [
     "tabs",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "file://*/*"
+  ],
+  "web_accessible_resources": [
+    "html/*",
+    "css/*"
   ],
   "content_scripts": [
     {
@@ -42,12 +47,19 @@
         "content/content.js"
       ],
       "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/open_popup.js"
+      ]
     }
   ],
   "background": {
     "scripts": [
       "lib/jquery.min.js",
-      "lib/vue.js",
       "background.js"
     ],
     "persistent": false
