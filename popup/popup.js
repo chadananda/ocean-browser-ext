@@ -16,7 +16,7 @@ var nodes = {
     button: document.getElementById('download'),
     letter: document.getElementById('download_letter')
   }
-  
+
 }
 const downloadLink = "https://sacred-traditions.org/ocean/";
 const locales = {
@@ -49,11 +49,22 @@ const locales = {
   }
 }
 function setListeners() {
-  function openOceanSearch(){
+  function openOceanSearch() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {cmd: "openPopup"}, function() {
+      chrome.tabs.sendMessage(tabs[0].id, {cmd: "openOceanSearch"}, function() {
+        // if(response.res == 'success') {
+        //   console.log('success');
+        // }
       });
     });
+    // var port = chrome.tabs.connect(tabs[0].id);
+    // port.postMessage({ joke: "Knock knock" });
+    // port.onMessage.addListener(function (msg) {
+    //   if (msg.question == "Who's there?")
+    //     port.postMessage({ answer: "Madame" });
+    //   else if (msg.question == "Madame who?")
+    //     port.postMessage({ answer: "Madame... Bovary" });
+    // });
   }
   function changePopupUI(lang) {
     nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
@@ -64,7 +75,7 @@ function setListeners() {
     nodes.tools.spell_check.innerHTML = locales[lang].spellCheck;
     nodes.download.letter.innerHTML = locales[lang].download;
   }
-  function checkBoxHandler(handler){
+  function checkBoxHandler(handler) {
     if (handler.checked) {
       console.log(handler.value);
     } else {
@@ -74,25 +85,25 @@ function setListeners() {
   function openDownloadPage() {
     chrome.tabs.create({ url: downloadLink });
   }
-  nodes.openOceanSearch.addEventListener('click', function(){
+  nodes.openOceanSearch.addEventListener('click', function () {
     openOceanSearch();
   })
-  nodes.language.onchange = function() {
+  nodes.language.onchange = function () {
     var value = this.options[this.selectedIndex].value;
     if (value == 'ar') changePopupUI('ar');
     else if (value == 'fa') changePopupUI('fa');
     else changePopupUI('en');
   }
-  nodes.tools.edit_tool.querySelector('input[name=key_mapping]').addEventListener('change', function(){
+  nodes.tools.edit_tool.querySelector('input[name=key_mapping]').addEventListener('change', function () {
     checkBoxHandler(this);
   })
-  nodes.tools.edit_tool.querySelector('input[name=auto_correct]').addEventListener('change', function(){
+  nodes.tools.edit_tool.querySelector('input[name=auto_correct]').addEventListener('change', function () {
     checkBoxHandler(this);
   })
-  nodes.tools.edit_tool.querySelector('input[name=spell_check]').addEventListener('change', function(){
+  nodes.tools.edit_tool.querySelector('input[name=spell_check]').addEventListener('change', function () {
     checkBoxHandler(this);
   })
-  nodes.download.button.addEventListener('click', function(){
+  nodes.download.button.addEventListener('click', function () {
     openDownloadPage()
   })
 }
