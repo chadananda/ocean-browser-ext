@@ -52,19 +52,11 @@ function setListeners() {
   function openOceanSearch() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {cmd: "openOceanSearch"}, function() {
-        // if(response.res == 'success') {
-        //   console.log('success');
-        // }
+        if(response.res == 'success') {
+          console.log('success');
+        }
       });
     });
-    // var port = chrome.tabs.connect(tabs[0].id);
-    // port.postMessage({ joke: "Knock knock" });
-    // port.onMessage.addListener(function (msg) {
-    //   if (msg.question == "Who's there?")
-    //     port.postMessage({ answer: "Madame" });
-    //   else if (msg.question == "Madame who?")
-    //     port.postMessage({ answer: "Madame... Bovary" });
-    // });
   }
   function changePopupUI(lang) {
     nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
@@ -86,6 +78,7 @@ function setListeners() {
     chrome.tabs.create({ url: downloadLink });
   }
   nodes.openOceanSearch.addEventListener('click', function () {
+    // nodes
     openOceanSearch();
   })
   nodes.language.onchange = function () {
