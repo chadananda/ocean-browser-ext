@@ -51,7 +51,7 @@ const locales = {
 function setListeners() {
   function openOceanSearch() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {cmd: "openOceanSearch"}, function() {
+      chrome.tabs.sendMessage(tabs[0].id, {cmd: "openOceanSearch"}, function(response) {
         if(response.res == 'success') {
           console.log('success');
         }
