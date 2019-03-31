@@ -49,9 +49,9 @@ const locales = {
   }
 }
 function setListeners() {
-  function openOceanSearch() {
+  function openOceanSearch(lang) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {cmd: "openOceanSearch"}, function(response) {
+      chrome.tabs.sendMessage(tabs[0].id, {cmd: lang}, function(response) {
         if(response.res == 'success') {
           window.close();
         }
@@ -78,8 +78,7 @@ function setListeners() {
     chrome.tabs.create({ url: downloadLink });
   }
   nodes.openOceanSearch.addEventListener('click', function () {
-    // openOceanSearch(nodes.language.value);
-    openOceanSearch();
+    openOceanSearch(nodes.language.value);
   })
   nodes.language.onchange = function () {
     var value = this.options[this.selectedIndex].value;

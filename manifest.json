@@ -54,7 +54,8 @@
       "js": [
         "lib/jquery.min.js",
         "content/insert_libs.js"
-      ]
+      ],
+      "run_at": "document_end"
     }
   ],
   "background": {
