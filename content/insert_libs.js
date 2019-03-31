@@ -10,20 +10,21 @@ loadAndPopupSearch_Cached = function() {
   let script2 = 'https://search-widget.current.build.ocean.isddesign.com/search-widget-ocean.min.js'
   $.cachedScript(script1).done(() => {
     $.cachedScript(script2).done(() => {
-      $("html").append("<search-widget-ocean></search-widget-ocean>")
+      $("body").append("<search-widget-ocean></search-widget-ocean>")
     })
   })
 }
 loadAndPopupSearch_Cached();
-
 // listen click event on extension
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.cmd == 'ar') {
-    $("search-widget-ocean").appendChild() 
-  } else if (request.cmd == 'fa') {
-  } else {
-  }
-  $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
+  // if (request.cmd == 'ar') {
+  //   $("search-widget-ocean").appendChild() 
+  // } else if (request.cmd == 'fa') {
+  // } else {
+  // }
+  if (request.cmd) {
+    $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
     sendResponse({ res: 'success' });
+  }
   return true;
 });
