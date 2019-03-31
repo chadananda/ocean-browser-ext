@@ -17,12 +17,13 @@ loadAndPopupSearch_Cached = function() {
 loadAndPopupSearch_Cached();
 // listen click event on extension
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  // if (request.cmd == 'ar') {
-  //   $("search-widget-ocean").appendChild() 
-  // } else if (request.cmd == 'fa') {
-  // } else {
-  // }
   if (request.cmd) {
+    console.log(request.cmd);
+    if (request.cmd == 'toggle-feature-foo') {
+      $("search-widget-ocean").attr('language', 'en'); 
+    } else {
+      $("search-widget-ocean").attr('language', requst.cmd); 
+    }
     $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
     sendResponse({ res: 'success' });
   }
