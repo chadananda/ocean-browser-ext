@@ -52,6 +52,7 @@
         "<all_urls>"
       ],
       "js": [
+        "lib/jquery.min.js",
         "content/insert_libs.js"
       ]
     }
@@ -62,5 +63,14 @@
       "background.js"
     ],
     "persistent": false
+  },
+  "commands": {
+    "toggle-feature-foo": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Toggle feature foo"
+    }
   }
 }
