@@ -78,7 +78,7 @@ function setListeners() {
     chrome.tabs.create({ url: downloadLink });
   }
   nodes.openOceanSearch.addEventListener('click', function () {
-    // nodes
+    // openOceanSearch(nodes.language.value);
     openOceanSearch();
   })
   nodes.language.onchange = function () {
