@@ -1,4 +1,5 @@
 "use strict";
+var syncLang = '';
 
 var nodes = {
   openOceanSearch: document.getElementById('open_ocean_search'),
@@ -16,7 +17,6 @@ var nodes = {
     button: document.getElementById('download'),
     letter: document.getElementById('download_letter')
   }
-
 }
 const downloadLink = "https://sacred-traditions.org/ocean/";
 const locales = {
@@ -48,6 +48,24 @@ const locales = {
     download: 'اقیانوس 2.0 برنامه'
   }
 }
+
+function changePopupUI(lang) {
+  if (lang == '') {
+    lang = 'en';
+  }
+  chrome.storage.sync.set({lang: lang}, function(){
+  });
+
+  nodes.language.value = lang;
+  nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
+  nodes.language_letter.innerHTML = locales[lang].language;
+  nodes.tools.legend.innerHTML = locales[lang].editTool;
+  nodes.tools.key_mapping.innerHTML = locales[lang].keyMapping;
+  nodes.tools.auto_correct.innerHTML = locales[lang].autoCorrect;
+  nodes.tools.spell_check.innerHTML = locales[lang].spellCheck;
+  nodes.download.letter.innerHTML = locales[lang].download;
+}
+
 function setListeners() {
   function openOceanSearch(lang) {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -58,15 +76,7 @@ function setListeners() {
       });
     });
   }
-  function changePopupUI(lang) {
-    nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
-    nodes.language_letter.innerHTML = locales[lang].language;
-    nodes.tools.legend.innerHTML = locales[lang].editTool;
-    nodes.tools.key_mapping.innerHTML = locales[lang].keyMapping;
-    nodes.tools.auto_correct.innerHTML = locales[lang].autoCorrect;
-    nodes.tools.spell_check.innerHTML = locales[lang].spellCheck;
-    nodes.download.letter.innerHTML = locales[lang].download;
-  }
+
   function checkBoxHandler(handler) {
     if (handler.checked) {
       console.log(handler.value);
@@ -74,12 +84,15 @@ function setListeners() {
       console.log('unchecked');
     }
   }
+
   function openDownloadPage() {
     chrome.tabs.create({ url: downloadLink });
   }
+
   nodes.openOceanSearch.addEventListener('click', function () {
     openOceanSearch(nodes.language.value);
-  })
+  });
+
   nodes.language.onchange = function () {
     var value = this.options[this.selectedIndex].value;
     if (value == 'ar') changePopupUI('ar');
@@ -88,16 +101,25 @@ function setListeners() {
   }
   nodes.tools.edit_tool.querySelector('input[name=key_mapping]').addEventListener('change', function () {
     checkBoxHandler(this);
-  })
+  });
+
   nodes.tools.edit_tool.querySelector('input[name=auto_correct]').addEventListener('change', function () {
     checkBoxHandler(this);
-  })
+  });
+
   nodes.tools.edit_tool.querySelector('input[name=spell_check]').addEventListener('change', function () {
     checkBoxHandler(this);
-  })
+  });
+
   nodes.download.button.addEventListener('click', function () {
     openDownloadPage()
-  })
+  });
 }
+
+chrome.storage.sync.get(['lang'], function(result) {
+  if (result.lang) {
+    changePopupUI(result.lang);
+  }
+});
 setListeners();
 
