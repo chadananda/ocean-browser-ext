@@ -21,8 +21,7 @@
     "file://*/*"
   ],
   "web_accessible_resources": [
-    "html/*",
-    "css/*"
+    "icons/ocean.png"
   ],
   "content_scripts": [
     {
@@ -31,6 +30,7 @@
       ],
       "js": [
         "lib/jquery.min.js",
+        "content/helper.js",
         "content/content.js"
       ],
       "run_at": "document_end"

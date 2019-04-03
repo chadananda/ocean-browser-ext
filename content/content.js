@@ -13,13 +13,18 @@ loadAndPopupSearch_Cached = function () {
   });
 }
 
-// get hostname and detect
-detectUrl = function () {
-  var hostname = window.location.hostname;
-  
-  switch (hostname) {
-    case 'www.google.com': {
-      $("body").children[3].children[6].children[2].children[1].children[0].children[0].children[0].append('<search-widget-ocean>Ocean Search 2.0</search-widget-ocean>');
+// get url and detect
+insertOceanComponent = function () {
+  var url = window.location.href;
+  switch (url) {
+    case 'https://www.google.com/': {
+      var element = document.body.children[3].children[6].children[2].children[1].children[0].children[0].children[0];
+      var component = container({
+        id: 'google',
+        parentClass: element.childNodes[0].className,
+        childClass: element.childNodes[0].childNodes[0].className
+      });
+      element.insertBefore(component, element.childNodes[0]);
       break;
     }
   }
@@ -27,10 +32,9 @@ detectUrl = function () {
 
 
 
-
 loadAndPopupSearch_Cached();
-detectUrl();
-// insert component
+insertOceanComponent();
+// insert component when user clicks extension or press shortcut (CTRL+SHIFT+Y)
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.cmd) {
     if ($('search-widget-ocean')) $('search-widget-ocean').remove();
@@ -45,12 +49,3 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   return true;
 });
 
-
-// detect URL
-// function detectUrl(hostname) {
-//   switch (hostname) {
-//     case "www.facebook.com":
-//       url = "facebook"
-//   }
-// }
-// detectUrl(hostname);
