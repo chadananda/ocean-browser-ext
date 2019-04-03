@@ -21,11 +21,15 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
   * [  ] Spell check accented names & offer suggestions
 
 ### referrals ###
-  "https://www.facebook.com/*",
+  "https://www.facebook.com/",
   "https://www.google.com/",
-  "https://bahai-library.com/*",
-  "https://*.bahai.org/",
-  "https://reference.bahai.org/en/",
+  "http://bahai-library.com/",
+
+  "https://www.bahai.org/",
+  "https://news.bahai.org/",
+  "https://media.bahai.org",
+
+  "http://reference.bahai.org/en/",
   "https://www.youtube.com/",
   "https://www.bic.org/",
   "https://www.reddit.com/",

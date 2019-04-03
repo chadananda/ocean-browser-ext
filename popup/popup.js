@@ -1,5 +1,4 @@
 "use strict";
-var syncLang = '';
 
 var nodes = {
   openOceanSearch: document.getElementById('open_ocean_search'),

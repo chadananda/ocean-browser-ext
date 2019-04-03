@@ -27,34 +27,11 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.facebook.com/*",
-        "https://www.google.com/",
-        "https://bahai-library.com/*",
-        "https://*.bahai.org/",
-        "https://reference.bahai.org/en/",
-        "https://www.youtube.com/",
-        "https://www.bic.org/",
-        "https://www.reddit.com/",
-        "https://www.yahoo.com/",
-        "https://*.wikipedia.org/wiki/*",
-        "https://www.baidu.com/"
-      ],
-      "css": [
-        "content/content.css"
-      ],
-      "js": [
-        "lib/jquery.min.js",
-        "content/content.js"
-      ],
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
         "<all_urls>"
       ],
       "js": [
         "lib/jquery.min.js",
-        "content/insert_libs.js"
+        "content/content.js"
       ],
       "run_at": "document_end"
     }
