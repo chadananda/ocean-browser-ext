@@ -1,6 +1,6 @@
 var nodes = {
   img: {
-    url: 'chrome-extension://hdiaplnoedelpopladiiihdlalcldiab/icons/ocean.png',
+    url: 'https://sacred-traditions.org/ocean_assets/images/ocean-logo.svg',
     width: '20px',
     verticalAlign: 'middle',
     margin: '0 5px'
