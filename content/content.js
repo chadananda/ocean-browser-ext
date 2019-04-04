@@ -19,13 +19,37 @@ insertOceanElement = function () {
   switch (url) {
     case 'https://www.google.com/': {
       var element = document.querySelector('.gb_Zd');
-      var component = container({
-        id: 'google',
+      var oceanComponent = container({
         parentClass: element.childNodes[0].className,
         childClass: element.childNodes[0].childNodes[0].className
       });
-      element.insertBefore(component, element.childNodes[0]);
+      
+      element.insertBefore(oceanComponent, element.childNodes[0]);
       break;
+    }
+    case 'http://bahai-library.com/': {
+      var oceanComponent = container({
+        parentClass: "",
+        childClass: ""
+      });
+      oceanComponent.style.margin = '13px';
+
+      $(document).ready(function () {
+        var element = document.querySelector('.gsc-search-box').closest('table');
+        element.removeAttribute('align');
+
+        var parent = element.parentNode;
+        var wrapper = document.createElement('div');
+        wrapper.style.display = 'flex';
+        wrapper.style.justifyContent = 'center';
+
+        // set the wrapper as child (instead of the element)
+        parent.replaceChild(wrapper, element);
+        wrapper.appendChild(element);
+        wrapper.appendChild(oceanComponent);
+      })
+      break;
+
     }
   }
 }
@@ -35,14 +59,11 @@ insertOceanElement();
 // insert component when user clicks extension or press shortcut (CTRL+SHIFT+Y)
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.cmd) {
-    if (!$('search-widget-ocean').length) {
+    if ($('search-widget-ocean')) $('search-widget-ocean').remove();
       $("body").append(
-        "<search-widget-ocean language=" +
-        request.cmd +
-        "></search-widget-ocean>"
+        "<search-widget-ocean language=" + request.cmd + "></search-widget-ocean>"
       );
-    }
-    $('search-widget-ocean').shadowRoot.querySelector('#search-popup').click();
+      $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
     sendResponse({ res: 'success' });
   }
   return true;

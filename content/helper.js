@@ -12,7 +12,6 @@ var nodes = {
 
 container = function (obj) {
   var parent = document.createElement('div');
-  parent.id = obj.id;
   parent.className = obj.parentClass;
   parent.style.cursor = nodes.cursor;
 
@@ -42,6 +41,6 @@ container = function (obj) {
       );
       $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
     });
-  })
+  });
   return parent;
 }
