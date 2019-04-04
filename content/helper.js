@@ -12,7 +12,7 @@ var nodes = {
 
 container = function (obj) {
   var parent = document.createElement('div');
-  parent.className = obj.parentClass;
+  parent.className = obj.parentClass || "";
   parent.style.cursor = nodes.cursor;
 
   var pic = document.createElement('img');
@@ -23,7 +23,7 @@ container = function (obj) {
 
   var child = document.createElement('a');
   child.textContent = nodes.title;
-  child.className = obj.childClass;
+  child.className = obj.childClass || "";
 
   parent.appendChild(pic);
   parent.appendChild(child);

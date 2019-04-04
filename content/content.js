@@ -18,20 +18,18 @@ insertOceanElement = function () {
   var url = window.location.href;
   switch (url) {
     case 'https://www.google.com/': {
-      var element = document.querySelector('.gb_Zd');
-      var oceanComponent = container({
-        parentClass: element.childNodes[0].className,
-        childClass: element.childNodes[0].childNodes[0].className
-      });
-      
-      element.insertBefore(oceanComponent, element.childNodes[0]);
+      $(document).ready(function () {
+        var element = document.querySelector('.gb_Zd');
+        var oceanComponent = container({
+          parentClass: element.childNodes[0].className,
+          childClass: element.childNodes[0].childNodes[0].className
+        });
+        element.insertBefore(oceanComponent, element.childNodes[0]);
+      })
       break;
     }
     case 'http://bahai-library.com/': {
-      var oceanComponent = container({
-        parentClass: "",
-        childClass: ""
-      });
+      var oceanComponent = container({});
       oceanComponent.style.margin = '13px';
 
       $(document).ready(function () {
@@ -49,7 +47,18 @@ insertOceanElement = function () {
         wrapper.appendChild(oceanComponent);
       })
       break;
+    }
+    case 'https://www.bahai.org/': {
+      var oceanComponent = container({});
+      oceanComponent.childNodes[1].style.color = '#fff';
+      oceanComponent.childNodes[1].style.textDecoration = 'none';
 
+      $(document).ready(function () {
+        var element = document.querySelector('#mastersearch');
+        element.style.width = '25%';
+        element.parentNode.insertBefore(oceanComponent, element);
+      })
+      break;
     }
   }
 }
@@ -60,10 +69,10 @@ insertOceanElement();
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.cmd) {
     if ($('search-widget-ocean')) $('search-widget-ocean').remove();
-      $("body").append(
-        "<search-widget-ocean language=" + request.cmd + "></search-widget-ocean>"
-      );
-      $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
+    $("body").append(
+      "<search-widget-ocean language=" + request.cmd + "></search-widget-ocean>"
+    );
+    $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
     sendResponse({ res: 'success' });
   }
   return true;

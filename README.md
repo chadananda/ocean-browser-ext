@@ -34,6 +34,11 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
   "https://www.bic.org/",
   "https://www.reddit.com/",
   "https://www.yahoo.com/",
-  "https://*.wikipedia.org/wiki/*",
+  "https://en.wikipedia.org/wiki/*",
   "https://www.baidu.com/"
 
+### container ###
+<div class="" style="cursor: pointer; margin: 13px;">
+  <img src="https://sacred-traditions.org/ocean_assets/images/ocean-logo.svg" style="width: 20px; vertical-align: middle; margin: 0px 5px;">
+  <a class="">Ocean 2.0 Search</a>
+</div>
