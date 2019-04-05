@@ -60,6 +60,9 @@ insertOceanElement = function () {
       })
       break;
     }
+    // case 'https://news.bahai.org/' : {
+
+    // }
   }
 }
 
