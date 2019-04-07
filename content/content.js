@@ -60,17 +60,17 @@ insertOceanElement = function () {
       })
       break;
     }
-    case 'https://news.bahai.org/' : {
+    case 'https://news.bahai.org/': {
       var oceanComponent = container({});
       oceanComponent.style.margin = '10px';
       oceanComponent.childNodes[1].style.color = '#fff';
-      oceanComponent.childNodes[1].style.display = 'none';
+      oceanComponent.childNodes[1].style.textDecoration = 'none';
 
-      $(document).ready(function() {
+      $(window).on('load', function(){
         var element = document.querySelector('#languages');
         var parent = element.parentNode;
         parent.style.display = 'flex';
-        parent.insertBefore(oceanComponent, element)
+        parent.insertBefore(oceanComponent, element);
       })
       break;
     }
