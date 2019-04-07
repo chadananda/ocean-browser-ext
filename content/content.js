@@ -66,13 +66,28 @@ insertOceanElement = function () {
       oceanComponent.childNodes[1].style.color = '#fff';
       oceanComponent.childNodes[1].style.textDecoration = 'none';
 
-      $(window).on('load', function(){
-        var element = document.querySelector('#languages');
-        var parent = element.parentNode;
-        parent.style.display = 'flex';
-        parent.insertBefore(oceanComponent, element);
+      $(window).on('load', function () {
+        setTimeout(function () {
+          var element = document.querySelector('#languages');
+          var parent = element.parentNode;
+          parent.style.display = 'flex';
+          parent.insertBefore(oceanComponent, element);
+        }, 500);
       })
       break;
+    }
+    case 'http://reference.bahai.org/en/': {
+      var oceanComponent = container({});
+      oceanComponent.style.margin = '0 0 10px 0';
+      oceanComponent.childNodes[1].style.color = '#3c6d8b';
+      oceanComponent.childNodes[1].style.textDecoration = 'none';
+      oceanComponent.childNodes[1].style.fontSize = '14px';
+
+      $(document).ready(function() {
+        var element = document.querySelector('.menuDivider');
+        var parent = element.parentNode;
+        parent.insertBefore(oceanComponent, element)
+      })
     }
   }
 }
