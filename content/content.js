@@ -64,7 +64,7 @@ insertOceanElement = function () {
       var oceanComponent = container({});
       oceanComponent.style.margin = '10px';
       oceanComponent.childNodes[1].style.color = '#fff';
-      oceanComponent.childNodes[1].style.color = 'none';
+      oceanComponent.childNodes[1].style.display = 'none';
 
       $(document).ready(function() {
         var element = document.querySelector('#languages');
