@@ -34,6 +34,16 @@
         "content/content.js"
       ],
       "run_at": "document_end"
+    },{
+      "matches": [
+        "https://*.wikipedia.org/wiki/*"
+      ],
+      "js": [
+        "lib/jquery.min.js",
+        "content/helper.js",
+        "content/wiki.js"
+      ],
+      "run_at": "document_end"
     }
   ],
   "background": {

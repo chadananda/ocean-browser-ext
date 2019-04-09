@@ -1,3 +1,19 @@
+// check cache to detect vue and search-widget-ocean exist or not
+loadAndPopupSearch_Cached = function () {
+  if (typeof $.cachedScript != 'function') $.cachedScript = function (url, options) {
+    // to do this without recurring delay, we need to have a getScript which caches
+    options = $.extend(options || {}, { dataType: "script", cache: true, url: url })
+    return $.ajax(options);
+  }
+  // load scripts first (will be very fast when cached)
+  let script1 = 'https://unpkg.com/vue@2.6.10/dist/vue.js'
+  let script2 = 'https://search-widget.current.build.ocean.isddesign.com/search-widget-ocean.min.js'
+  $.cachedScript(script1).done(() => {
+    $.cachedScript(script2);
+  });
+}
+
+// for ocean component style
 var nodes = {
   img: {
     url: 'https://sacred-traditions.org/ocean_assets/images/ocean-logo.svg',
