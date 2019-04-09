@@ -36,6 +36,17 @@
       "run_at": "document_end"
     },{
       "matches": [
+        "https://www.google.com/"
+      ],
+      "js": [
+        "lib/jquery.min.js",
+        "content/helper.js",
+        "content/google.js"
+      ],
+      "run_at":"document_end"
+    },
+    {
+      "matches": [
         "https://*.wikipedia.org/wiki/*"
       ],
       "js": [
