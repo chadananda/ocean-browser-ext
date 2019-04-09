@@ -29,8 +29,8 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
 - [ ] "https://media.bahai.org"
 
 - [x] "http://reference.bahai.org/en/"
-- [ ] "https://www.youtube.com/"
-- [ ] "https://www.bic.org/"
+- [x] "https://www.youtube.com/"
+- [x] "https://www.bic.org/"
 - [ ] "https://www.reddit.com/"
 - [ ] "https://www.yahoo.com/"
 - [ ] "https://en.wikipedia.org/wiki/*"

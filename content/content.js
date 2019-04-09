@@ -17,7 +17,7 @@ loadAndPopupSearch_Cached = function () {
 insertOceanElement = function () {
   var url = window.location.href;
   switch (url) {
-    case 'https://www.google.com/': {
+    case 'https://www.google.com/':
       $(document).ready(function () {
         var element = document.querySelector('.gb_Zd');
         var oceanComponent = container({
@@ -27,8 +27,8 @@ insertOceanElement = function () {
         element.insertBefore(oceanComponent, element.childNodes[0]);
       })
       break;
-    }
-    case 'http://bahai-library.com/': {
+
+    case 'http://bahai-library.com/':
       var oceanComponent = container({});
       oceanComponent.style.margin = '13px';
 
@@ -47,8 +47,8 @@ insertOceanElement = function () {
         wrapper.appendChild(oceanComponent);
       })
       break;
-    }
-    case 'https://www.bahai.org/': {
+
+    case 'https://www.bahai.org/':
       var oceanComponent = container({});
       oceanComponent.childNodes[1].style.color = '#fff';
       oceanComponent.childNodes[1].style.textDecoration = 'none';
@@ -59,8 +59,8 @@ insertOceanElement = function () {
         element.parentNode.insertBefore(oceanComponent, element);
       })
       break;
-    }
-    case 'https://news.bahai.org/': {
+
+    case 'https://news.bahai.org/':
       var oceanComponent = container({});
       oceanComponent.style.margin = '10px';
       oceanComponent.childNodes[1].style.color = '#fff';
@@ -75,30 +75,40 @@ insertOceanElement = function () {
         }, 500);
       })
       break;
-    }
-    case 'http://reference.bahai.org/en/': {
+
+    case 'http://reference.bahai.org/en/':
       var oceanComponent = container({});
       oceanComponent.style.margin = '0 0 10px 0';
       oceanComponent.childNodes[1].style.color = '#3c6d8b';
       oceanComponent.childNodes[1].style.textDecoration = 'none';
       oceanComponent.childNodes[1].style.fontSize = '14px';
 
-      $(document).ready(function() {
+      $(document).ready(function () {
         var element = document.querySelector('.menuDivider');
         var parent = element.parentNode;
         parent.insertBefore(oceanComponent, element)
       })
-    }
+      break;
     case 'https://www.youtube.com/':
       var oceanComponent = container({});
       oceanComponent.style.margin = '15px 0 0 0';
       oceanComponent.childNodes[0].style.padding = '0 20px';
       oceanComponent.childNodes[1].style.fontSize = '1.4rem';
 
-      $(document).ready(function() {
+      $(document).ready(function () {
         var element = document.querySelector('#guide-content');
         var parent = element.parentNode;
         parent.insertBefore(oceanComponent, element);
+      })
+      break;
+    case 'https://www.bic.org/':
+      var oceanComponent = container({});
+      oceanComponent.childNodes[0].style.display = 'none';
+      $(document).ready(function () {
+        var element = document.querySelector('#superfish-3');
+        var wrapper = document.createElement('li');
+        wrapper.appendChild(oceanComponent);
+        element.appendChild(wrapper);
       })
   }
 }
