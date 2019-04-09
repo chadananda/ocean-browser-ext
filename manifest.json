@@ -16,6 +16,7 @@
   "permissions": [
     "tabs",
     "storage",
+    "webNavigation",
     "http://*/*",
     "https://*/*",
     "file://*/*"
@@ -41,8 +42,7 @@
         "content/google.js"
       ],
       "run_at":"document_end"
-    },
-    {
+    },{
       "matches": [
         "https://*.wikipedia.org/wiki/*"
       ],
@@ -70,6 +70,16 @@
         "lib/jquery.min.js",
         "content/helper.js",
         "content/www-bahai.js"
+      ],
+      "run_at":"document_end"
+    },{
+      "matches": [
+        "https://news.bahai.org/*"
+      ],
+      "js": [
+        "lib/jquery.min.js",
+        "content/helper.js",
+        "content/news-bahai.js"
       ],
       "run_at":"document_end"
     }

@@ -24,8 +24,8 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
 - [ ] "https://www.facebook.com/" (content prevent setting)
 - [x] "https://www.google.com/"
 - [x] "http://bahai-library.com/" (vue console error)
-- [ ] "https://www.bahai.org/"
-- [ ] "https://news.bahai.org/"
+- [x] "https://www.bahai.org/"
+- [x] "https://news.bahai.org/" (sub URLs issue)
 - [ ] "https://media.bahai.org"
 
 - [ ] "http://reference.bahai.org/en/"
