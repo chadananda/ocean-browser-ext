@@ -26,7 +26,7 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
 - [x] "http://bahai-library.com/" (vue console error)
 - [x] "https://www.bahai.org/"
 - [x] "https://news.bahai.org/" (sub URLs issue)
-- [ ] "https://media.bahai.org"
+- [ ] "https://media.bahai.org" (there is no spare space)
 
 - [ ] "http://reference.bahai.org/en/"
 - [ ] "https://www.youtube.com/"
