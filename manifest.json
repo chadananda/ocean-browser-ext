@@ -20,9 +20,6 @@
     "https://*/*",
     "file://*/*"
   ],
-  "web_accessible_resources": [
-    "icons/ocean.png"
-  ],
   "content_scripts": [
     {
       "matches": [
@@ -65,6 +62,16 @@
         "content/bahai-lib.js"
       ],
       "run_at": "document_end"
+    },{
+      "matches": [
+        "https://www.bahai.org/"
+      ],
+      "js": [
+        "lib/jquery.min.js",
+        "content/helper.js",
+        "content/www-bahai.js"
+      ],
+      "run_at":"document_end"
     }
   ],
   "background": {
