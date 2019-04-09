@@ -88,6 +88,30 @@
         "content/youtube.js"
       ],
       "run_at":"document_end"
+    },{
+      "matches": [
+        "https://www.bic.org/*"
+      ],
+      "js": [
+        "content/bic.js"
+      ],
+      "run_at":"document_end"
+    },{
+      "matches": [
+        "https://www.yahoo.com/*"
+      ],
+      "js": [
+        "content/yahoo.js"
+      ],
+      "run_at":"document_end"
+    },{
+      "matches": [
+        "https://www.baidu.com/"
+      ],
+      "js": [
+        "content/baidu.js"
+      ],
+      "run_at":"document_end"
     }
   ],
   "background": {
