@@ -129,6 +129,7 @@ insertOceanElement = function () {
         element.appendChild(oceanComponent);
       })
       break;
+    // case 'https://'
   }
 }
 

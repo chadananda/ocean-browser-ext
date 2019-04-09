@@ -34,7 +34,7 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
 - [ ] "https://www.reddit.com/"
 - [ ] "https://www.yahoo.com/"
 - [ ] "https://en.wikipedia.org/wiki/*"
-- [ ] "https://www.baidu.com/"
+- [x] "https://www.baidu.com/"
 
 ### image icon ###
 <div class="" style="cursor: pointer; margin: 13px;">
