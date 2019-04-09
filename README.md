@@ -21,20 +21,20 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
   * [  ] Spell check accented names & offer suggestions
 
 ### referrals ###
-- [ ] "https://www.facebook.com/"
+- [ ] "https://www.facebook.com/" (content prevent setting)
 - [x] "https://www.google.com/"
-- [x] "http://bahai-library.com/"
-- [x] "https://www.bahai.org/"
-- [x] "https://news.bahai.org/"
+- [x] "http://bahai-library.com/" (vue console error)
+- [ ] "https://www.bahai.org/"
+- [ ] "https://news.bahai.org/"
 - [ ] "https://media.bahai.org"
 
-- [x] "http://reference.bahai.org/en/"
-- [x] "https://www.youtube.com/"
-- [x] "https://www.bic.org/"
+- [ ] "http://reference.bahai.org/en/"
+- [ ] "https://www.youtube.com/"
+- [ ] "https://www.bic.org/"
 - [ ] "https://www.reddit.com/"
 - [ ] "https://www.yahoo.com/"
-- [ ] "https://en.wikipedia.org/wiki/*"
-- [x] "https://www.baidu.com/"
+- [x] "https://en.wikipedia.org/wiki/*"
+- [ ] "https://www.baidu.com/"
 
 ### image icon ###
 <div class="" style="cursor: pointer; margin: 13px;">

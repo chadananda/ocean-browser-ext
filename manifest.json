@@ -55,6 +55,16 @@
         "content/wiki.js"
       ],
       "run_at": "document_end"
+    },{
+      "matches": [
+        "http://bahai-library.com/"
+      ],
+      "js": [
+        "lib/jquery.min.js",
+        "content/helper.js",
+        "content/bahai-lib.js"
+      ],
+      "run_at": "document_end"
     }
   ],
   "background": {
