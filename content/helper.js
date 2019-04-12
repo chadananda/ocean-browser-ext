@@ -8,8 +8,11 @@ loadAndPopupSearch_Cached = function () {
   // load scripts first (will be very fast when cached)
   let script1 = 'https://unpkg.com/vue@2.6.10/dist/vue.js'
   let script2 = 'https://search-widget.current.build.ocean.isddesign.com/search-widget-ocean.min.js'
+  let script3 = 'https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js'
   $.cachedScript(script1).done(() => {
-    $.cachedScript(script2);
+    $.cachedScript(script2).done(() => {
+      $.cachedScript(script3)
+    });
   });
 }
 
@@ -59,4 +62,54 @@ container = function (obj) {
     });
   });
   return parent;
+}
+
+
+var keyMapping = {
+  // dot-unders: Ḥ ḥ Ṭ ṭ Ẓ ẓ Ṣ ṣ Ḍ ḍ
+  "ctrl+.+h": "ḥ",
+  "ctrl+.+t": "ṭ",
+  "ctrl+.+z": "ẓ",
+  "ctrl+.+s": "ṣ",
+  "ctrl+.+d": "ḍ",
+
+  // Ayn and Hamza (6 and 9 curly single quotes): ’ ‘
+  "ctrl+'+9": "’",
+  "ctrl+'+6": "‘"
+}
+
+
+insertText = function (lastFocused, text) {
+  var input = lastFocused;
+  if (input == undefined) { return; }
+  var scrollPos = input.scrollTop;
+  var pos = 0;
+  var browser = ((input.selectionStart || input.selectionStart == "0") ?
+    "ff" : (document.selection ? "ie" : false));
+  if (browser == "ie") {
+    input.focus();
+    var range = document.selection.createRange();
+    range.moveStart("character", -input.value.length);
+    pos = range.text.length;
+  }
+  else if (browser == "ff") { pos = input.selectionStart };
+
+  var front = (input.value).substring(0, pos);
+  var back = (input.value).substring(pos, input.value.length);
+  input.value = front + text + back;
+  pos = pos + text.length;
+  if (browser == "ie") {
+    input.focus();
+    var range = document.selection.createRange();
+    range.moveStart("character", -input.value.length);
+    range.moveStart("character", pos);
+    range.moveEnd("character", 0);
+    range.select();
+  }
+  else if (browser == "ff") {
+    input.selectionStart = pos;
+    input.selectionEnd = pos;
+    input.focus();
+  }
+  input.scrollTop = scrollPos;
 }

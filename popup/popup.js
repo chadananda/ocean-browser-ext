@@ -76,13 +76,30 @@ function setListeners() {
     });
   }
 
-  function checkBoxHandler(handler) {
+  function keyMapping(handler) {
+    var value = '';
     if (handler.checked) {
-      console.log(handler.value);
-    } else {
-      console.log('unchecked');
+      value = hanlder.checked;
     }
+    chrome.storage.sync.set({keyMapping: value})
   }
+
+  function autoCorrect(handler) {
+    var value = '';
+    if (handler.checked) {
+      value = hanlder.checked;
+    }
+    chrome.storage.sync.set({autoCorrect: value})
+  }
+
+  function spellCheck(handler) {
+    var value = '';
+    if (handler.checked) {
+      value = hanlder.checked;
+    }
+    chrome.storage.sync.set({spellCheck: value})
+  }
+
 
   function openDownloadPage() {
     chrome.tabs.create({ url: downloadLink });
@@ -99,15 +116,15 @@ function setListeners() {
     else changePopupUI('en');
   }
   nodes.tools.edit_tool.querySelector('input[name=key_mapping]').addEventListener('change', function () {
-    checkBoxHandler(this);
+    keyMapping(this);
   });
 
   nodes.tools.edit_tool.querySelector('input[name=auto_correct]').addEventListener('change', function () {
-    checkBoxHandler(this);
+    autoCorrect(this);
   });
 
   nodes.tools.edit_tool.querySelector('input[name=spell_check]').addEventListener('change', function () {
-    checkBoxHandler(this);
+    spellCheck(this);
   });
 
   nodes.download.button.addEventListener('click', function () {
