@@ -6,11 +6,13 @@ var nodes = {
   language_letter: document.getElementById('language_letter'),
   language: document.getElementById('language'),
   tools: {
-    edit_tool: document.getElementById('tools'),
     legend: document.getElementById('edit_tool_letter'),
-    key_mapping: document.getElementById('key_mapping'),
-    auto_correct: document.getElementById('auto_correct'),
-    spell_check: document.getElementById('spell_check')
+    key_mapping: document.querySelector('#key_mapping'),
+    auto_correct: document.querySelector('#auto_correct'),
+    spell_check: document.querySelector('#spell_check'),
+    key_mapping_letter: document.getElementById('key_mapping_letter'),
+    auto_correct_letter: document.getElementById('auto_correct_letter'),
+    spell_check_letter: document.getElementById('spell_check_letter')
   },
   download: {
     button: document.getElementById('download'),
@@ -48,94 +50,95 @@ const locales = {
   }
 }
 
-function changePopupUI(lang) {
-  if (lang == '') {
-    lang = 'en';
-  }
-  chrome.storage.sync.set({lang: lang}, function(){
-  });
+var setting = {
+  lang: 'en',
+  keyMapping: false,
+  autoCorrect: false,
+  spellCheck: false
+};
 
-  nodes.language.value = lang;
+function changePopupUI(setting) {
+  var lang = setting.lang;
+  console.log(lang);
   nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
   nodes.language_letter.innerHTML = locales[lang].language;
   nodes.tools.legend.innerHTML = locales[lang].editTool;
-  nodes.tools.key_mapping.innerHTML = locales[lang].keyMapping;
-  nodes.tools.auto_correct.innerHTML = locales[lang].autoCorrect;
-  nodes.tools.spell_check.innerHTML = locales[lang].spellCheck;
+  nodes.tools.key_mapping_letter.innerHTML = locales[lang].keyMapping;
+  nodes.tools.auto_correct_letter.innerHTML = locales[lang].autoCorrect;
+  nodes.tools.spell_check_letter.innerHTML = locales[lang].spellCheck;
   nodes.download.letter.innerHTML = locales[lang].download;
+}
+function openOceanSearch(lang) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {cmd: lang}, function(response) {
+      if(response.res == 'success') {
+        window.close();
+      }
+    });
+  });
+}
+
+function openDownloadPage() {
+  chrome.tabs.create({ url: downloadLink });
 }
 
 function setListeners() {
-  function openOceanSearch(lang) {
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {cmd: lang}, function(response) {
-        if(response.res == 'success') {
-          window.close();
-        }
-      });
-    });
-  }
-
-  function keyMapping(handler) {
-    var value = '';
-    if (handler.checked) {
-      value = hanlder.checked;
-    }
-    chrome.storage.sync.set({keyMapping: value})
-  }
-
-  function autoCorrect(handler) {
-    var value = '';
-    if (handler.checked) {
-      value = hanlder.checked;
-    }
-    chrome.storage.sync.set({autoCorrect: value})
-  }
-
-  function spellCheck(handler) {
-    var value = '';
-    if (handler.checked) {
-      value = hanlder.checked;
-    }
-    chrome.storage.sync.set({spellCheck: value})
-  }
-
-
-  function openDownloadPage() {
-    chrome.tabs.create({ url: downloadLink });
-  }
-
+  // open ocean search  
   nodes.openOceanSearch.addEventListener('click', function () {
     openOceanSearch(nodes.language.value);
   });
-
+  // change language option
   nodes.language.onchange = function () {
     var value = this.options[this.selectedIndex].value;
-    if (value == 'ar') changePopupUI('ar');
-    else if (value == 'fa') changePopupUI('fa');
-    else changePopupUI('en');
+    if (value == 'ar') {
+      setting.lang = 'ar'
+    } else if (value == 'fa') {
+      setting.lang = 'fa'
+    } else {
+      setting.lang = 'en'
+    }
+    chrome.storage.sync.set({lang: setting.lang}, function(){
+    });
+    changePopupUI(setting);
   }
-  nodes.tools.edit_tool.querySelector('input[name=key_mapping]').addEventListener('change', function () {
-    keyMapping(this);
+  // set tool
+  nodes.tools.key_mapping.addEventListener('change', function () {
+    chrome.storage.sync.set({keyMapping: this.checked}, function(){})
   });
 
-  nodes.tools.edit_tool.querySelector('input[name=auto_correct]').addEventListener('change', function () {
-    autoCorrect(this);
+  nodes.tools.auto_correct.addEventListener('change', function () {
+    chrome.storage.sync.set({autoCorrect: this.checked}, function(){})
   });
 
-  nodes.tools.edit_tool.querySelector('input[name=spell_check]').addEventListener('change', function () {
-    spellCheck(this);
+  nodes.tools.spell_check.addEventListener('change', function () {
+    chrome.storage.sync.set({spellCheck: this.checked}, function(){})
   });
-
+ 
   nodes.download.button.addEventListener('click', function () {
     openDownloadPage()
   });
 }
 
-chrome.storage.sync.get(['lang'], function(result) {
+
+chrome.storage.sync.get(['lang', 'keyMapping', 'autoCorrect', 'spellCheck'], function(result) {
   if (result.lang) {
-    changePopupUI(result.lang);
+    setting.lang = result.lang
+    nodes.language.value = result.lang;
   }
+  if (result.keyMapping) {
+    setting.keyMapping = result.keyMapping
+    nodes.tools.key_mapping.checked = true;
+  }
+  if (result.autoCorrect) {
+    setting.autoCorrect = true;
+    nodes.tools.auto_correct.checked = true;
+  }
+  if (result.spellCheck) {
+    setting.spellCheck = true;
+    nodes.tools.spell_check.checked = true;
+  }
+  changePopupUI(setting);
 });
+
 setListeners();
 

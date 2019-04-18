@@ -94,10 +94,11 @@ var keyMapping = {
   "ctrl+' shift+i": "Í",
 
   "ctrl+' u": "ú",
-  "ctrl+' shift+u": "Ú"
+  "ctrl+' shift+u": "Ú",
 
   // Underscore letters: Sh, Gh, Dh, Th, Kh, Zh, Ch  
 //  (may need to use macrons or underline instead!!
+  "ctrl+- g h": "test"
 // "ctrl+u g h": '<u>gh</u>'
 // "ctrl+u","S","h"], "command": "insert", "args": {"characters": "<u>Sh</u>"} },
 // "ctrl+u","S","H"], "command": "insert", "args": {"characters": "<u>SH</u>"} },

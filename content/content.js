@@ -20,14 +20,18 @@ $(window).on('load', function () {
   $("input, textarea").addClass('mousetrap');
 
   // dot-unders: Ḥ ḥ Ṭ ṭ Ẓ ẓ Ṣ ṣ Ḍ ḍ
-  Mousetrap.bind("ctrl+. shift+h", function (e) {
-    e.preventDefault();
-    insertText(lastFocused, keyMapping["ctrl+. shift+h"])
-    return false;
+  if (chrome.storage.sync.get['keyMapping'], function(result) {
+    console.log(result.keyMapping);
+    // if (result.keyMapping)
   })
   Mousetrap.bind("ctrl+. h", function (e) {
     e.preventDefault();
     insertText(lastFocused, keyMapping["ctrl+. h"])
+    return false;
+  })
+  Mousetrap.bind("ctrl+. shift+h", function (e) {
+    e.preventDefault();
+    insertText(lastFocused, keyMapping["ctrl+. shift+h"])
     return false;
   })
   Mousetrap.bind("ctrl+. shift+t", function (e) {
@@ -37,34 +41,34 @@ $(window).on('load', function () {
   })
   Mousetrap.bind("ctrl+. t", function (e) {
     e.preventDefault();
-    insertText(lastFocused, keyMapping["ctrl+.+t"])
+    insertText(lastFocused, keyMapping["ctrl+. t"])
   })
   Mousetrap.bind("ctrl+. shift+z", function (e) {
     e.preventDefault();
     insertText(lastFocused, keyMapping["ctrl+. shift+z"])
     return false;
   })
-  Mousetrap.bind("ctrl+ z", function (e) {
+  Mousetrap.bind("ctrl+. z", function (e) {
     e.preventDefault();
-    insertText(lastFocused, keyMapping["ctrl+ z"])
+    insertText(lastFocused, keyMapping["ctrl+. z"])
   })
   Mousetrap.bind("ctrl+. shift+s", function (e) {
     e.preventDefault();
     insertText(lastFocused, keyMapping["ctrl+. shift+s"])
     return false;
   })
-  Mousetrap.bind("ctrl+ s", function (e) {
+  Mousetrap.bind("ctrl+. s", function (e) {
     e.preventDefault();
-    insertText(lastFocused, keyMapping["ctrl+ s"])
+    insertText(lastFocused, keyMapping["ctrl+. s"])
   })
   Mousetrap.bind("ctrl+. shift+d", function (e) {
     e.preventDefault();
     insertText(lastFocused, keyMapping["ctrl+. shift+d"])
     return false;
   })
-  Mousetrap.bind("ctrl+ d", function (e) {
+  Mousetrap.bind("ctrl+. d", function (e) {
     e.preventDefault();
-    insertText(lastFocused, keyMapping["ctrl+ d"])
+    insertText(lastFocused, keyMapping["ctrl+. d"])
   })
 
   // Ayn and Hamza (6 and 9 curly single quotes): ’ ‘
@@ -106,8 +110,8 @@ $(window).on('load', function () {
   })
 
   // Underscore letters: Sh, Gh, Dh, Th, Kh, Zh, Ch
-  // Mousetrap.bind("ctrl+u g h", function (e) {
+  // Mousetrap.bind("g i", function (e) {
   //   e.preventDefault();
-  //   insertText(lastFocused, keyMapping["ctrl+u+g+h"])
+  //   insertText(lastFocused, keyMapping["ctrl+- g h"])
   // })
 })
