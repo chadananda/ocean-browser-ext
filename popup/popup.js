@@ -59,7 +59,6 @@ var setting = {
 
 function changePopupUI(setting) {
   var lang = setting.lang;
-  console.log(lang);
   nodes.openOceanSearchLetter.innerHTML = locales[lang].openOceanSearchLetter;
   nodes.language_letter.innerHTML = locales[lang].language;
   nodes.tools.legend.innerHTML = locales[lang].editTool;
@@ -90,13 +89,7 @@ function setListeners() {
   // change language option
   nodes.language.onchange = function () {
     var value = this.options[this.selectedIndex].value;
-    if (value == 'ar') {
-      setting.lang = 'ar'
-    } else if (value == 'fa') {
-      setting.lang = 'fa'
-    } else {
-      setting.lang = 'en'
-    }
+    setting.lang = value;
     chrome.storage.sync.set({lang: setting.lang}, function(){
     });
     changePopupUI(setting);
