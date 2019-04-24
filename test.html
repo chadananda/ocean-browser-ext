@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <head>
-
+  <script src="./lib/bahai-autocorrect.js"></script>
+  <!-- <script src="./lib/word-diff.js"></script> -->
 </head>
+
 <body>
   <input>
   <textarea></textarea>
+  <script>
+    let str = 'Haji Mirza Haydar-Ali'
+    let bahaiAutocorrect = new BahaiAutocorrect(str).correct()
+    let fixedStr = bahaiAutocorrect.toString();
+    console.log(str);
+    console.log(fixedStr)
+  </script>
 </body>
+
 </html>
