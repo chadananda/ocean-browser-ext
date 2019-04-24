@@ -67,59 +67,59 @@ container = function (obj) {
 
 var keyMapping = {
   // dot-unders: Ḥ ḥ Ṭ ṭ Ẓ ẓ Ṣ ṣ Ḍ ḍ
-  "ctrl+. h": "ḥ",
-  "ctrl+. shift+h": "Ḥ",
+  "alt+. h": "ḥ",
+  "alt+. shift+h": "Ḥ",
 
-  "ctrl+. t": "ṭ",
-  "ctrl+. shift+t": "Ṭ",
+  "alt+. t": "ṭ",
+  "alt+. shift+t": "Ṭ",
 
-  "ctrl+. z": "ẓ",
-  "ctrl+. shift+z": "Ẓ",
+  "alt+. z": "ẓ",
+  "alt+. shift+z": "Ẓ",
 
-  "ctrl+. s": "ṣ",
-  "ctrl+. shift+s": "Ṣ",
+  "alt+. s": "ṣ",
+  "alt+. shift+s": "Ṣ",
 
-  "ctrl+. d": "ḍ",
-  "ctrl+. shift+d": "Ḍ",
+  "alt+. d": "ḍ",
+  "alt+. shift+d": "Ḍ",
 
   // Ayn and Hamza (6 and 9 curly single quotes): ’ ‘
-  "ctrl+' 9": "’",
-  "ctrl+' 6": "‘",
+  "alt+' 9": "’",
+  "alt+' 6": "‘",
 
   // Acute vowels: Á á Í í Ú ú
-  "ctrl+' a": "á",
-  "ctrl+' shift+a": "Á",
+  "alt+' a": "á",
+  "alt+' shift+a": "Á",
 
-  "ctrl+' i": "í",
-  "ctrl+' shift+i": "Í",
+  "alt+' i": "í",
+  "alt+' shift+i": "Í",
 
-  "ctrl+' u": "ú",
-  "ctrl+' shift+u": "Ú",
+  "alt+' u": "ú",
+  "alt+' shift+u": "Ú",
 
   // Underscore letters: Sh, Gh, Dh, Th, Kh, Zh, Ch  
 //  (may need to use macrons or underline instead!!
-  "ctrl+- g h": "test"
-// "ctrl+u g h": '<u>gh</u>'
-// "ctrl+u","S","h"], "command": "insert", "args": {"characters": "<u>Sh</u>"} },
-// "ctrl+u","S","H"], "command": "insert", "args": {"characters": "<u>SH</u>"} },
-// "ctrl+u","g","h"], "command": "insert", "args": {"characters": "<u>gh</u>"} },
-// "ctrl+u","G","h"], "command": "insert", "args": {"characters": "<u>Gh</u>"} },
-// "ctrl+u","G","H"], "command": "insert", "args": {"characters": "<u>GH</u>"} },
-// "ctrl+u","d","h"], "command": "insert", "args": {"characters": "<u>dh</u>"} },
-// "ctrl+u","D","h"], "command": "insert", "args": {"characters": "<u>Dh</u>"} },
-// "ctrl+u","D","H"], "command": "insert", "args": {"characters": "<u>DH</u>"} },
-// "ctrl+u","t","h"], "command": "insert", "args": {"characters": "<u>th</u>"} },
-// "ctrl+u","T","h"], "command": "insert", "args": {"characters": "<u>Th</u>"} },
-// "ctrl+u","T","H"], "command": "insert", "args": {"characters": "<u>TH</u>"} },
-// "ctrl+u","k","h"], "command": "insert", "args": {"characters": "<u>kh</u>"} },
-// "ctrl+u","K","h"], "command": "insert", "args": {"characters": "<u>Kh</u>"} },
-// "ctrl+u","K","H"], "command": "insert", "args": {"characters": "<u>KH</u>"} },
-// "ctrl+u","z","h"], "command": "insert", "args": {"characters": "<u>zh</u>"} },
-// "ctrl+u","Z","h"], "command": "insert", "args": {"characters": "<u>Zh</u>"} },
-// "ctrl+u","Z","H"], "command": "insert", "args": {"characters": "<u>ZH</u>"} },
-// "ctrl+u","c","h"], "command": "insert", "args": {"characters": "<u>ch</u>"} },
-// "ctrl+u","C","h"], "command": "insert", "args": {"characters": "<u>Ch</u>"} },
-// "ctrl+u","C","H"], "command": "insert", "args": {"characters": "<u>CH</u>"} } 
+  "alt+- g h": "test"
+// "alt+u g h": '<u>gh</u>'
+// "alt+u","S","h"], "command": "insert", "args": {"characters": "<u>Sh</u>"} },
+// "alt+u","S","H"], "command": "insert", "args": {"characters": "<u>SH</u>"} },
+// "alt+u","g","h"], "command": "insert", "args": {"characters": "<u>gh</u>"} },
+// "alt+u","G","h"], "command": "insert", "args": {"characters": "<u>Gh</u>"} },
+// "alt+u","G","H"], "command": "insert", "args": {"characters": "<u>GH</u>"} },
+// "alt+u","d","h"], "command": "insert", "args": {"characters": "<u>dh</u>"} },
+// "alt+u","D","h"], "command": "insert", "args": {"characters": "<u>Dh</u>"} },
+// "alt+u","D","H"], "command": "insert", "args": {"characters": "<u>DH</u>"} },
+// "alt+u","t","h"], "command": "insert", "args": {"characters": "<u>th</u>"} },
+// "alt+u","T","h"], "command": "insert", "args": {"characters": "<u>Th</u>"} },
+// "alt+u","T","H"], "command": "insert", "args": {"characters": "<u>TH</u>"} },
+// "alt+u","k","h"], "command": "insert", "args": {"characters": "<u>kh</u>"} },
+// "alt+u","K","h"], "command": "insert", "args": {"characters": "<u>Kh</u>"} },
+// "alt+u","K","H"], "command": "insert", "args": {"characters": "<u>KH</u>"} },
+// "alt+u","z","h"], "command": "insert", "args": {"characters": "<u>zh</u>"} },
+// "alt+u","Z","h"], "command": "insert", "args": {"characters": "<u>Zh</u>"} },
+// "alt+u","Z","H"], "command": "insert", "args": {"characters": "<u>ZH</u>"} },
+// "alt+u","c","h"], "command": "insert", "args": {"characters": "<u>ch</u>"} },
+// "alt+u","C","h"], "command": "insert", "args": {"characters": "<u>Ch</u>"} },
+// "alt+u","C","H"], "command": "insert", "args": {"characters": "<u>CH</u>"} } 
 }
 
 

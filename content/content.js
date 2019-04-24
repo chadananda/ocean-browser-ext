@@ -32,95 +32,95 @@ $(window).on('load', function () {
         $("input, textarea").addClass('mousetrap');
 
         // dot-unders: Ḥ ḥ Ṭ ṭ Ẓ ẓ Ṣ ṣ Ḍ ḍ
-        Mousetrap.bind("ctrl+. h", function (e) {
+        Mousetrap.bind("alt+. h", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. h"])
+          insertText(lastFocused, keyMapping["alt+. h"])
           return false;
         })
-        Mousetrap.bind("ctrl+. shift+h", function (e) {
+        Mousetrap.bind("alt+. shift+h", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. shift+h"])
+          insertText(lastFocused, keyMapping["alt+. shift+h"])
           return false;
         })
-        Mousetrap.bind("ctrl+. shift+t", function (e) {
+        Mousetrap.bind("alt+. shift+t", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. shift+t"])
+          insertText(lastFocused, keyMapping["alt+. shift+t"])
           return false;
         })
-        Mousetrap.bind("ctrl+. t", function (e) {
+        Mousetrap.bind("alt+. t", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. t"])
+          insertText(lastFocused, keyMapping["alt+. t"])
         })
-        Mousetrap.bind("ctrl+. shift+z", function (e) {
+        Mousetrap.bind("alt+. shift+z", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. shift+z"])
+          insertText(lastFocused, keyMapping["alt+. shift+z"])
           return false;
         })
-        Mousetrap.bind("ctrl+. z", function (e) {
+        Mousetrap.bind("alt+. z", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. z"])
+          insertText(lastFocused, keyMapping["alt+. z"])
         })
-        Mousetrap.bind("ctrl+. shift+s", function (e) {
+        Mousetrap.bind("alt+. shift+s", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. shift+s"])
+          insertText(lastFocused, keyMapping["alt+. shift+s"])
           return false;
         })
-        Mousetrap.bind("ctrl+. s", function (e) {
+        Mousetrap.bind("alt+. s", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. s"])
+          insertText(lastFocused, keyMapping["alt+. s"])
         })
-        Mousetrap.bind("ctrl+. shift+d", function (e) {
+        Mousetrap.bind("alt+. shift+d", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. shift+d"])
+          insertText(lastFocused, keyMapping["alt+. shift+d"])
           return false;
         })
-        Mousetrap.bind("ctrl+. d", function (e) {
+        Mousetrap.bind("alt+. d", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+. d"])
+          insertText(lastFocused, keyMapping["alt+. d"])
           return false;
         })
 
         // Ayn and Hamza (6 and 9 curly single quotes): ’ ‘
-        Mousetrap.bind("ctrl+' 9", function (e) {
+        Mousetrap.bind("alt+' 9", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' 9"])
+          insertText(lastFocused, keyMapping["alt+' 9"])
           return false;
         })
-        Mousetrap.bind("ctrl+' 6", function (e) {
+        Mousetrap.bind("alt+' 6", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' 6"])
+          insertText(lastFocused, keyMapping["alt+' 6"])
           return false;
         })
 
         // Acute vowels: Á á Í í Ú ú
-        Mousetrap.bind("ctrl+' a", function (e) {
+        Mousetrap.bind("alt+' a", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' a"])
+          insertText(lastFocused, keyMapping["alt+' a"])
           return false;
         })
-        Mousetrap.bind("ctrl+' shift+a", function (e) {
+        Mousetrap.bind("alt+' shift+a", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' shift+a"])
+          insertText(lastFocused, keyMapping["alt+' shift+a"])
           return false;
         })
-        Mousetrap.bind("ctrl+' i", function (e) {
+        Mousetrap.bind("alt+' i", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' i"])
+          insertText(lastFocused, keyMapping["alt+' i"])
           return false;
         })
-        Mousetrap.bind("ctrl+' shift+i", function (e) {
+        Mousetrap.bind("alt+' shift+i", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' shift+i"])
+          insertText(lastFocused, keyMapping["alt+' shift+i"])
           return false;
         })
-        Mousetrap.bind("ctrl+' u", function (e) {
+        Mousetrap.bind("alt+' u", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' u"])
+          insertText(lastFocused, keyMapping["alt+' u"])
           return false;
         })
-        Mousetrap.bind("ctrl+' shift+u", function (e) {
+        Mousetrap.bind("alt+' shift+u", function (e) {
           e.preventDefault();
-          insertText(lastFocused, keyMapping["ctrl+' shift+u"])
+          insertText(lastFocused, keyMapping["alt+' shift+u"])
           return false;
         })
       }
