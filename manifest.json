@@ -112,6 +112,14 @@
         "content/baidu.js"
       ],
       "run_at":"document_end"
+    },{
+      "matches":[
+        "https://docs.google.com/document/*"
+      ],
+      "js": [
+        "lib/googleDocsUtil.js"
+      ],
+      "run_at": "document_end"
     }
   ],
   "background": {

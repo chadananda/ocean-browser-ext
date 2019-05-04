@@ -24,6 +24,35 @@ $(window).on('load', function () {
   port.onMessage.addListener(function (msg) {
     if (msg.response == 'editToolSetting') {
       if (msg.data.keyMapping) {
+        if (location.href.indexOf('https://docs.google.com/document') > -1) {
+          // var editingIFrame = $('iframe.docs-texteventtarget-iframe');
+          var iframe = $('iframe');
+          if (iframe) {
+          }
+          // if(editingIFrame) {
+          //   var iframeDocument = editingIFrame.contentDocument;
+          //   Mousetrap.bind( iframeDocument );
+          // }
+
+          // var googleDoc = googleDocsUtil.getGoogleDocument();
+          // console.log(googleDoc);
+          // var editingIFrame;
+          // setTimeout(() => {
+          //   editingIFrame = document.getElementsByTagName("iframe")[0].contentDocument;
+          //   // editingIFrame = $('iframe.docs-texteventtarget-iframe').contentDocument;
+          // }, 5000);
+          // if (editingIFrame) {
+          //   console.log('focus');
+          //   editingIFrame.focus(function () {
+          //     Mousetrap.bind("alt+.", function (e) {
+          //       console.log('key press');
+          //       e.preventDefault();
+          //       googleDocsUtil.setTextCurrentCursor("apple");
+          //       return false;
+          //     })
+          //   })
+          // }
+        }
         var lastFocused;
         $("input, textarea").focus(function () {
           lastFocused = document.activeElement;
@@ -123,6 +152,14 @@ $(window).on('load', function () {
           insertText(lastFocused, keyMapping["alt+' shift+u"])
           return false;
         })
+
+
+        // autoreplace
+        // Mousetrap.bind("space", function (e) {
+        //   e.preventDefault();
+
+        //   return false;
+        // })
       }
     }
   })
