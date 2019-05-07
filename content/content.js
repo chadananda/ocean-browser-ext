@@ -24,35 +24,70 @@ $(window).on('load', function () {
   port.onMessage.addListener(function (msg) {
     if (msg.response == 'editToolSetting') {
       if (msg.data.keyMapping) {
-        if (location.href.indexOf('https://docs.google.com/document') > -1) {
-          // var editingIFrame = $('iframe.docs-texteventtarget-iframe');
-          var iframe = $('iframe');
-          if (iframe) {
-          }
-          // if(editingIFrame) {
-          //   var iframeDocument = editingIFrame.contentDocument;
-          //   Mousetrap.bind( iframeDocument );
-          // }
+        // $("iframe").each(function (i, iframe) {
+        //   Mousetrap.bindEventsTo(iframe.contentDocument);
+        // });
+        // var gmailContent = new Combokeys($('.Ap').children[1]);
+        //   gmailContent.bind("?", function() { console.log('show shortcuts!'); });
+        // (function checkForNewIframe(doc) {
+        //   if (!doc) return;
 
-          // var googleDoc = googleDocsUtil.getGoogleDocument();
-          // console.log(googleDoc);
-          // var editingIFrame;
-          // setTimeout(() => {
-          //   editingIFrame = document.getElementsByTagName("iframe")[0].contentDocument;
-          //   // editingIFrame = $('iframe.docs-texteventtarget-iframe').contentDocument;
-          // }, 5000);
-          // if (editingIFrame) {
-          //   console.log('focus');
-          //   editingIFrame.focus(function () {
-          //     Mousetrap.bind("alt+.", function (e) {
-          //       console.log('key press');
-          //       e.preventDefault();
-          //       googleDocsUtil.setTextCurrentCursor("apple");
-          //       return false;
-          //     })
-          //   })
-          // }
-        }
+        // })
+        // (function checkForNewIframe(doc) {
+        //   if (!doc) return; // document does not exist. Cya
+
+        //   // Note: It is important to use "true", to bind events to the capturing
+        //   // phase. If omitted or set to false, the event listener will be bound
+        //   // to the bubbling phase, where the event is not visible any more when
+        //   // Gmail calls event.stopPropagation().
+        //   // Calling addEventListener with the same arguments multiple times bind
+        //   // the listener only once, so we don't have to set a guard for that.
+        //   // doc.addEventListener('keydown', keyDown, true);
+        //   // doc.addEventListener('keyup', keyUp, true);
+        //   doc.hasSeenDocument = true;
+        //   for (var i = 0, contentDocument; i < frames.length; i++) {
+        //     try {
+        //       contentDocument = iframes[i].document;
+        //     } catch (e) {
+        //       continue; // Same-origin policy violation?
+        //     }
+        //     if (contentDocument && !contentDocument.hasSeenDocument) {
+        //       // Add poller to the new iframe
+        //       checkForNewIframe(iframes[i].contentDocument);
+        //     }
+        //   }
+        //   setTimeout(checkForNewIframe, 250, doc); // <-- delay of 1/4 second
+        // })(document);
+        // if (location.href.indexOf('https://docs.google.com/document') > -1) {
+        //   var editingIFrame = $('iframe.docs-texteventtarget-iframe');
+        //   var iframe = $('iframe');
+        //   if (iframe) {
+        //   }
+        //   if(editingIFrame) {
+        //     var iframeDocument = editingIFrame.contentDocument;
+        //     Mousetrap.bind( iframeDocument );
+        //   }
+
+        //   var googleDoc = googleDocsUtil.getGoogleDocument();
+        //   console.log(googleDoc);
+        //   var editingIFrame;
+        //   setTimeout(() => {
+        //     editingIFrame = document.getElementsByTagName("iframe")[0].contentDocument;
+        //     // editingIFrame = $('iframe.docs-texteventtarget-iframe').contentDocument;
+        //   }, 5000);
+        //   if (editingIFrame) {
+        //     console.log('focus');
+        //     editingIFrame.focus(function () {
+        //       Mousetrap.bind("alt+.", function (e) {
+        //         console.log('key press');
+        //         e.preventDefault();
+        //         googleDocsUtil.setTextCurrentCursor("apple");
+        //         return false;
+        //       })
+        //     })
+        //   }
+        // }
+
         var lastFocused;
         $("input, textarea").focus(function () {
           lastFocused = document.activeElement;
