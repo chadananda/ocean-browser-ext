@@ -27,6 +27,7 @@
       ],
       "js": [
         "lib/jquery.min.js",
+        "lib/mousetrap.js",
         "content/helper.js",
         "content/content.js"
       ],

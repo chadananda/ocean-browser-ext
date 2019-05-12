@@ -8,11 +8,8 @@ loadAndPopupSearch_Cached = function () {
   // load scripts first (will be very fast when cached)
   let script1 = 'https://unpkg.com/vue@2.6.10/dist/vue.js'
   let script2 = 'https://search-widget.current.build.ocean.isddesign.com/search-widget-ocean.min.js'
-  let script3 = 'https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js'
   $.cachedScript(script1).done(() => {
-    $.cachedScript(script2).done(() => {
-      $.cachedScript(script3)
-    });
+    $.cachedScript(script2).done();
   });
 }
 
