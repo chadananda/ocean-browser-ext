@@ -25,9 +25,14 @@
       "matches": [
         "<all_urls>"
       ],
+      "exclude_matches": [
+        "https://mail.google.com/mail/*",
+        "https://docs.google.com/document/*"
+      ],
       "js": [
         "lib/jquery.min.js",
         "lib/mousetrap.js",
+        "lib/mousetrap-bind-dictionary.js",
         "content/helper.js",
         "content/content.js"
       ],
@@ -37,7 +42,7 @@
         "https://www.google.com/"
       ],
       "js": [
-        "content/google.js"
+        "content/common/google.js"
       ],
       "run_at":"document_end"
     },{
@@ -45,7 +50,7 @@
         "https://*.wikipedia.org/wiki/*"
       ],
       "js": [
-        "content/wiki.js"
+        "content/common/wiki.js"
       ],
       "run_at": "document_end"
     },{
@@ -53,7 +58,7 @@
         "http://bahai-library.com/"
       ],
       "js": [
-        "content/bahai-lib.js"
+        "content/common/bahai-lib.js"
       ],
       "run_at": "document_end"
     },{
@@ -61,7 +66,7 @@
         "https://www.bahai.org/"
       ],
       "js": [
-        "content/www-bahai.js"
+        "content/common/www-bahai.js"
       ],
       "run_at":"document_end"
     },{
@@ -69,7 +74,7 @@
         "https://news.bahai.org/*"
       ],
       "js": [
-        "content/news-bahai.js"
+        "content/common/news-bahai.js"
       ],
       "run_at":"document_end"
     },{
@@ -77,7 +82,7 @@
         "http://reference.bahai.org/*/*"
       ],
       "js": [
-        "content/ref-bahai.js"
+        "content/common/ref-bahai.js"
       ],
       "run_at":"document_end"
     },{
@@ -85,7 +90,7 @@
         "https://www.youtube.com/*"
       ],
       "js": [
-        "content/youtube.js"
+        "content/common/youtube.js"
       ],
       "run_at":"document_end"
     },{
@@ -93,7 +98,7 @@
         "https://www.bic.org/*"
       ],
       "js": [
-        "content/bic.js"
+        "content/common/bic.js"
       ],
       "run_at":"document_end"
     },{
@@ -101,7 +106,7 @@
         "https://www.yahoo.com/*"
       ],
       "js": [
-        "content/yahoo.js"
+        "content/common/yahoo.js"
       ],
       "run_at":"document_end"
     },{
@@ -109,7 +114,7 @@
         "https://www.baidu.com/"
       ],
       "js": [
-        "content/baidu.js"
+        "content/common/baidu.js"
       ],
       "run_at":"document_end"
     },{
@@ -117,7 +122,24 @@
         "https://docs.google.com/document/*"
       ],
       "js": [
-        "lib/googleDocsUtil.js"
+        "lib/jquery.min.js",
+        "lib/mousetrap.js",
+        "lib/mousetrap-bind-dictionary.js",
+        "lib/googleDocsUtil.js",
+        "content/helper.js",
+        "content/gdocs.js"
+      ],
+      "run_at": "document_end"
+    },{
+      "matches":[
+        "https://mail.google.com/mail/*"
+      ],
+      "js": [
+        "lib/jquery.min.js",
+        "lib/mousetrap.js",
+        "lib/mousetrap-bind-dictionary.js",
+        "content/helper.js",
+        "content/gmail.js"
       ],
       "run_at": "document_end"
     }
