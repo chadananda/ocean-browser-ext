@@ -1,11 +1,17 @@
-// check cache to detect vue and search-widget-ocean exist or not
+/******************************************************************
+ * CHECK CACHE TO DETECT VUE AND SEARCH-WIDGET-OCEAN EXIST OR NOT *
+ ******************************************************************/
 loadAndPopupSearch_Cached = function () {
   if (typeof $.cachedScript != 'function') $.cachedScript = function (url, options) {
-    // to do this without recurring delay, we need to have a getScript which caches
+    /***********************************************************************************
+     * TO DO THIS WITHOUT RECURRING DELAY, WE NEED TO HAVE A GETSCRIPT WHICH CACHES *
+     ***********************************************************************************/
     options = $.extend(options || {}, { dataType: "script", cache: true, url: url })
     return $.ajax(options);
   }
-  // load scripts first (will be very fast when cached)
+  /******************************************************
+   * LOAD SCRIPTS FIRST (WILL BE VERY FAST WHEN CACHED) *
+   ******************************************************/
   let script1 = 'https://unpkg.com/vue@2.6.10/dist/vue.js'
   let script2 = 'https://search-widget.current.build.ocean.isddesign.com/search-widget-ocean.min.js'
   $.cachedScript(script1).done(() => {
@@ -13,7 +19,9 @@ loadAndPopupSearch_Cached = function () {
   });
 }
 
-// for ocean component style
+/********************************
+ * FOR OCEAN COMPONENT STYLE *
+ ********************************/
 var nodes = {
   img: {
     url: 'https://sacred-traditions.org/ocean_assets/images/ocean-logo.svg',
@@ -63,60 +71,72 @@ container = function (obj) {
 
 
 var keyMapping = {
-  // dot-unders: Ḥ ḥ Ṭ ṭ Ẓ ẓ Ṣ ṣ Ḍ ḍ
-  "alt+. h": "ḥ",
-  "alt+. shift+h": "Ḥ",
+  /***********************************
+   * DOT-UNDERS: Ḥ Ḥ Ṭ Ṭ Ẓ Ẓ Ṣ Ṣ Ḍ Ḍ *
+   ***********************************/
+  "alt+. h"       : "ḥ",
+  "alt+. shift+h" : "Ḥ",
 
-  "alt+. t": "ṭ",
-  "alt+. shift+t": "Ṭ",
+  "alt+. t"       : "ṭ",
+  "alt+. shift+t" : "Ṭ",
 
-  "alt+. z": "ẓ",
-  "alt+. shift+z": "Ẓ",
+  "alt+. z"       : "ẓ",
+  "alt+. shift+z" : "Ẓ",
 
-  "alt+. s": "ṣ",
-  "alt+. shift+s": "Ṣ",
+  "alt+. s"       : "ṣ",
+  "alt+. shift+s" : "Ṣ",
 
-  "alt+. d": "ḍ",
-  "alt+. shift+d": "Ḍ",
+  "alt+. d"       : "ḍ",
+  "alt+. shift+d" : "Ḍ",
 
-  // Ayn and Hamza (6 and 9 curly single quotes): ’ ‘
-  "alt+' 9": "’",
-  "alt+' 6": "‘",
+  /****************************************************
+   * AYN AND HAMZA (6 AND 9 CURLY SINGLE QUOTES): ’ ‘ *
+   ****************************************************/
+  "alt+' 9"       : "’",
+  "alt+' 6"       : "‘",
 
-  // Acute vowels: Á á Í í Ú ú
-  "alt+' a": "á",
-  "alt+' shift+a": "Á",
+  /*****************************
+   * ACUTE VOWELS: Á Á Í Í Ú Ú *
+   *****************************/
+  "alt+' a"       : "á",
+  "alt+' shift+a" : "Á",
 
-  "alt+' i": "í",
-  "alt+' shift+i": "Í",
+  "alt+' i"       : "í",
+  "alt+' shift+i" : "Í",
 
-  "alt+' u": "ú",
-  "alt+' shift+u": "Ú",
+  "alt+' u"       : "ú",
+  "alt+' shift+u" : "Ú"
 
-  // Underscore letters: Sh, Gh, Dh, Th, Kh, Zh, Ch  
-//  (may need to use macrons or underline instead!!
-  "alt+- g h": "test"
-// "alt+u g h": '<u>gh</u>'
-// "alt+u","S","h"], "command": "insert", "args": {"characters": "<u>Sh</u>"} },
-// "alt+u","S","H"], "command": "insert", "args": {"characters": "<u>SH</u>"} },
-// "alt+u","g","h"], "command": "insert", "args": {"characters": "<u>gh</u>"} },
-// "alt+u","G","h"], "command": "insert", "args": {"characters": "<u>Gh</u>"} },
-// "alt+u","G","H"], "command": "insert", "args": {"characters": "<u>GH</u>"} },
-// "alt+u","d","h"], "command": "insert", "args": {"characters": "<u>dh</u>"} },
-// "alt+u","D","h"], "command": "insert", "args": {"characters": "<u>Dh</u>"} },
-// "alt+u","D","H"], "command": "insert", "args": {"characters": "<u>DH</u>"} },
-// "alt+u","t","h"], "command": "insert", "args": {"characters": "<u>th</u>"} },
-// "alt+u","T","h"], "command": "insert", "args": {"characters": "<u>Th</u>"} },
-// "alt+u","T","H"], "command": "insert", "args": {"characters": "<u>TH</u>"} },
-// "alt+u","k","h"], "command": "insert", "args": {"characters": "<u>kh</u>"} },
-// "alt+u","K","h"], "command": "insert", "args": {"characters": "<u>Kh</u>"} },
-// "alt+u","K","H"], "command": "insert", "args": {"characters": "<u>KH</u>"} },
-// "alt+u","z","h"], "command": "insert", "args": {"characters": "<u>zh</u>"} },
-// "alt+u","Z","h"], "command": "insert", "args": {"characters": "<u>Zh</u>"} },
-// "alt+u","Z","H"], "command": "insert", "args": {"characters": "<u>ZH</u>"} },
-// "alt+u","c","h"], "command": "insert", "args": {"characters": "<u>ch</u>"} },
-// "alt+u","C","h"], "command": "insert", "args": {"characters": "<u>Ch</u>"} },
-// "alt+u","C","H"], "command": "insert", "args": {"characters": "<u>CH</u>"} } 
+  /***************************************************
+   * UNDERSCORE LETTERS: SH, GH, DH, TH, KH, ZH, CH  *
+   * (MAY NEED TO USE MACRONS OR UNDERLINE INSTEAD!! *
+   ***************************************************/
+  // "alt+u shift+s h"      : "Sh",
+  // "alt+u shift+s shift+h": "SH",
+
+  // "alt+u g h"            : "gh",
+  // "alt+u shift+g h"      : "Gh",
+  // "alt+u shift+g shift+h": "GH",
+
+  // "alt+u d h"            : "dh",
+  // "alt+u shift+D h"      : "Dh",
+  // "alt+u shift+D shift+H": "DH",
+
+  // "alt+u t h"            : "th",
+  // "alt+u shift+T h"      : "Th",
+  // "alt+u shift+T shift+H": "TH",
+
+  // "alt+u k h"            : "kh",
+  // "alt+u shift+K h"      : "Kh",
+  // "alt+u shift+K shift+H": "KH",
+
+  // "alt+u z h"            : "zh",
+  // "alt+u shift+Z h"      : "Zh",
+  // "alt+u shift+Z shift+H": "ZH",
+
+  // "alt+u c h"            : "ch",
+  // "alt+u shift+C h"      : "Ch",
+  // "alt+u shift+C shift+H": "CH"
 }
 
 
