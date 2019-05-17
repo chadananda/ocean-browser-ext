@@ -1,10 +1,11 @@
 $(window).on('load', function () {
-  var element = document.querySelector('.gb_jf');
-
+  var gmailDiv = closestDescendant(document.querySelector('#searchform'), 'a[href$="wm"]');
+  var parent = gmailDiv.parentNode;
+  
   var oceanComponent = container({
-    parentClass: element.childNodes[0].className,
-    childClass: element.childNodes[0].childNodes[0].className
+    parentClass: parent.className,
+    childClass: gmailDiv.className
   });
   
-  element.insertBefore(oceanComponent, element.childNodes[0]);
+  parent.parentNode.insertBefore(oceanComponent, parent);
 })

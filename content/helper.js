@@ -64,43 +64,52 @@ container = function (obj) {
   return parent;
 }
 
+// find element from parent to child (opposite closet) 
+closestDescendant = function (root, selector) {
+  const elements = [root];
+  let e;
+  do {
+    e = elements.shift();
+  } while (!e.matches(selector) && elements.push(...e.children));
+  return e.matches(selector) ? e : null;
+}
 
 var keyMapping = {
   /***********************************
    * DOT-UNDERS: Ḥ Ḥ Ṭ Ṭ Ẓ Ẓ Ṣ Ṣ Ḍ Ḍ *
    ***********************************/
-  "alt+. h"       : "ḥ",
-  "alt+. shift+h" : "Ḥ",
+  "alt+. h": "ḥ",
+  "alt+. shift+h": "Ḥ",
 
-  "alt+. t"       : "ṭ",
-  "alt+. shift+t" : "Ṭ",
+  "alt+. t": "ṭ",
+  "alt+. shift+t": "Ṭ",
 
-  "alt+. z"       : "ẓ",
-  "alt+. shift+z" : "Ẓ",
+  "alt+. z": "ẓ",
+  "alt+. shift+z": "Ẓ",
 
-  "alt+. s"       : "ṣ",
-  "alt+. shift+s" : "Ṣ",
+  "alt+. s": "ṣ",
+  "alt+. shift+s": "Ṣ",
 
-  "alt+. d"       : "ḍ",
-  "alt+. shift+d" : "Ḍ",
+  "alt+. d": "ḍ",
+  "alt+. shift+d": "Ḍ",
 
   /****************************************************
    * AYN AND HAMZA (6 AND 9 CURLY SINGLE QUOTES): ’ ‘ *
    ****************************************************/
-  "alt+' 9"       : "’",
-  "alt+' 6"       : "‘",
+  "alt+' 9": "’",
+  "alt+' 6": "‘",
 
   /*****************************
    * ACUTE VOWELS: Á Á Í Í Ú Ú *
    *****************************/
-  "alt+' a"       : "á",
-  "alt+' shift+a" : "Á",
+  "alt+' a": "á",
+  "alt+' shift+a": "Á",
 
-  "alt+' i"       : "í",
-  "alt+' shift+i" : "Í",
+  "alt+' i": "í",
+  "alt+' shift+i": "Í",
 
-  "alt+' u"       : "ú",
-  "alt+' shift+u" : "Ú"
+  "alt+' u": "ú",
+  "alt+' shift+u": "Ú"
 
   /***************************************************
    * UNDERSCORE LETTERS: SH, GH, DH, TH, KH, ZH, CH  *
