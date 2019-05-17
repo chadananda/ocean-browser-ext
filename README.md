@@ -20,21 +20,25 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
   * [  ] Autocorrect common words
   * [  ] Spell check accented names & offer suggestions
 
-### referrals ###
-- [ ] "https://www.facebook.com/" (prevent their content)
-- [x] "https://www.google.com/"
-- [x] "http://bahai-library.com/" (vue console error)
+### working referrals ###
 - [x] "https://www.bahai.org/"
-- [x] "https://news.bahai.org/" (sub URLs issue)
-- [ ] "https://media.bahai.org" (there is no spare space)
-
-- [x] "http://reference.bahai.org/en/"
 - [x] "https://www.youtube.com/"
 - [x] "https://www.bic.org/"
-- [ ] "https://www.reddit.com/" (there is no space)
 - [X] "https://www.yahoo.com/"
+- [x] "http://reference.bahai.org/en/"
 - [x] "https://en.wikipedia.org/wiki/*"
-- [ ] "https://www.baidu.com/" (prevent their content)
+
+- [x] "http://bahai-library.com/" (works but vue console error)
+- [x] "https://news.bahai.org/" (it works only within main page not child pages)
+
+### issues ###
+- [ ] "https://media.bahai.org" (there is no spare space to insert icon)
+- [ ] "https://www.reddit.com/" (there is no space to insert icon)
+
+- [ ] "https://www.facebook.com/" (facebook prevents their content)
+- [ ] "https://www.baidu.com/" (baidu prevents their content)
+- [ ] "https://www.google.com/" (error due to instant changing classnames)
+
 
 ### image icon ###
 <div class="" style="cursor: pointer; margin: 13px;">
