@@ -21,24 +21,22 @@ Instructions for install are here:  https://docs.google.com/document/d/e/2PACX-1
   * [  ] Spell check accented names & offer suggestions
 
 ### working referrals ###
+- [x] "https://www.google.com/"
 - [x] "https://www.bahai.org/"
-- [x] "https://www.youtube.com/"
 - [x] "https://www.bic.org/"
 - [X] "https://www.yahoo.com/"
 - [x] "http://reference.bahai.org/en/"
 - [x] "https://en.wikipedia.org/wiki/*"
-
 - [x] "http://bahai-library.com/" (works but vue console error)
 - [x] "https://news.bahai.org/" (it works only within main page not child pages)
 
 ### issues ###
+- [ ] "https://www.youtube.com/" ( Class constructor p cannot be invoked without 'new')
 - [ ] "https://media.bahai.org" (there is no spare space to insert icon)
 - [ ] "https://www.reddit.com/" (there is no space to insert icon)
 
 - [ ] "https://www.facebook.com/" (facebook prevents their content)
 - [ ] "https://www.baidu.com/" (baidu prevents their content)
-- [ ] "https://www.google.com/" (error due to instant changing classnames)
-
 
 ### image icon ###
 <div class="" style="cursor: pointer; margin: 13px;">

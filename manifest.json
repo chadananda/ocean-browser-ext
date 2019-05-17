@@ -121,7 +121,6 @@
       "matches":[
         "https://docs.google.com/document/*"
       ],
-      "all_frames": true,
       "js": [
         "lib/jquery.min.js",
         "lib/mousetrap.js",
