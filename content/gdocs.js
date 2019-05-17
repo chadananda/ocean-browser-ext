@@ -8,6 +8,8 @@ $(window).on('load', function () {
   port.onMessage.addListener(function (msg) {
     if (msg.response == 'editToolSetting') {
       if (msg.data.keyMapping) {
+
+
         // function insertCharacter(text) {
         //   googleDocsUtil.setTextCurrentCursor(text);
         //   // var googleDoc = googleDocsUtil.getGoogleDocument();

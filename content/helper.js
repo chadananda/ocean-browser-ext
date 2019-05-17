@@ -1,17 +1,12 @@
-/******************************************************************
- * CHECK CACHE TO DETECT VUE AND SEARCH-WIDGET-OCEAN EXIST OR NOT *
- ******************************************************************/
+// CHECK CACHE TO DETECT VUE AND SEARCH-WIDGET-OCEAN EXIST OR NOT
+
 loadAndPopupSearch_Cached = function () {
   if (typeof $.cachedScript != 'function') $.cachedScript = function (url, options) {
-    /***********************************************************************************
-     * TO DO THIS WITHOUT RECURRING DELAY, WE NEED TO HAVE A GETSCRIPT WHICH CACHES *
-     ***********************************************************************************/
+    //  TO DO THIS WITHOUT RECURRING DELAY, WE NEED TO HAVE A GETSCRIPT WHICH CACHES
     options = $.extend(options || {}, { dataType: "script", cache: true, url: url })
     return $.ajax(options);
   }
-  /******************************************************
-   * LOAD SCRIPTS FIRST (WILL BE VERY FAST WHEN CACHED) *
-   ******************************************************/
+  //  LOAD SCRIPTS FIRST (WILL BE VERY FAST WHEN CACHED)
   let script1 = 'https://unpkg.com/vue@2.6.10/dist/vue.js'
   let script2 = 'https://search-widget.current.build.ocean.isddesign.com/search-widget-ocean.min.js'
   $.cachedScript(script1).done(() => {

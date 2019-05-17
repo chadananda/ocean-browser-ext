@@ -1,5 +1,5 @@
 $(window).on('load', function () {
-  var element = document.querySelector('.gb_Zd');
+  var element = document.querySelector('.gb_jf');
 
   var oceanComponent = container({
     parentClass: element.childNodes[0].className,

@@ -6,7 +6,9 @@ $(window).on('load', function () {
 
   $(document).ready(function () {
     var element = document.querySelector('#guide-content');
-    var parent = element.parentNode;
-    parent.insertBefore(oceanComponent, element);
+    if (element) {
+      var parent = element.parentNode;
+      parent.insertBefore(oceanComponent, element);
+    }
   })
 })

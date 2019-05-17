@@ -103,7 +103,7 @@
       "run_at":"document_end"
     },{
       "matches": [
-        "https://www.yahoo.com/*"
+        "https://*.yahoo.com/*"
       ],
       "js": [
         "content/common/yahoo.js"
