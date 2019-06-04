@@ -17,10 +17,7 @@ $(window).on('load', function () {
           range.detach();
           return true;
         }
-
-        /*******************************
-         * WAIT FOR 60S UNTIL FIND EDITCONTENT *
-         *******************************/
+        // wait for 60s until find editcontent
         var focusEl;
         var findFocusEl = setInterval(function () {
           focusEl = document.getElementsByClassName("editable")[0];

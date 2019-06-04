@@ -16,6 +16,7 @@
   "permissions": [
     "tabs",
     "storage",
+    "identity",
     "http://*/*",
     "https://*/*",
     "file://*/*"
@@ -37,101 +38,23 @@
         "content/content.js"
       ],
       "run_at": "document_end"
-    },{
+    },
+    {
       "matches": [
-        "https://www.google.com/"
-      ],
-      "js": [
-        "content/common/google.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches": [
-        "https://*.wikipedia.org/wiki/*"
-      ],
-      "js": [
-        "content/common/wiki.js"
-      ],
-      "run_at": "document_end"
-    },{
-      "matches": [
-        "http://bahai-library.com/"
-      ],
-      "js": [
-        "content/common/bahai-lib.js"
-      ],
-      "run_at": "document_end"
-    },{
-      "matches": [
-        "https://www.bahai.org/"
-      ],
-      "js": [
-        "content/common/www-bahai.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches": [
-        "https://news.bahai.org/*"
-      ],
-      "js": [
-        "content/common/news-bahai.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches": [
-        "http://reference.bahai.org/*/*"
-      ],
-      "js": [
-        "content/common/ref-bahai.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches": [
-        "https://www.youtube.com/*"
-      ],
-      "js": [
-        "content/common/youtube.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches": [
-        "https://www.bic.org/*"
-      ],
-      "js": [
-        "content/common/bic.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches": [
-        "https://*.yahoo.com/*"
-      ],
-      "js": [
-        "content/common/yahoo.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches": [
-        "https://www.baidu.com/"
-      ],
-      "js": [
-        "content/common/baidu.js"
-      ],
-      "run_at":"document_end"
-    },{
-      "matches":[
         "https://docs.google.com/document/*"
       ],
       "js": [
         "lib/jquery.min.js",
         "lib/mousetrap.js",
         "lib/mousetrap-bind-dictionary.js",
-        "lib/googleDocsUtil.js",
+        "lib/rwGoogleTextParse.js",
         "content/helper.js",
         "content/gdocs.js"
       ],
       "run_at": "document_end"
-    },{
-      "matches":[
+    },
+    {
+      "matches": [
         "https://mail.google.com/mail/*"
       ],
       "js": [
@@ -140,6 +63,96 @@
         "lib/mousetrap-bind-dictionary.js",
         "content/helper.js",
         "content/gmail.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.google.com/"
+      ],
+      "js": [
+        "content/common/google.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://*.wikipedia.org/wiki/*"
+      ],
+      "js": [
+        "content/common/wiki.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://bahai-library.com/"
+      ],
+      "js": [
+        "content/common/bahai-lib.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.bahai.org/"
+      ],
+      "js": [
+        "content/common/www-bahai.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://news.bahai.org/*"
+      ],
+      "js": [
+        "content/common/news-bahai.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://reference.bahai.org/*/*"
+      ],
+      "js": [
+        "content/common/ref-bahai.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "content/common/youtube.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.bic.org/*"
+      ],
+      "js": [
+        "content/common/bic.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://*.yahoo.com/*"
+      ],
+      "js": [
+        "content/common/yahoo.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://www.baidu.com/"
+      ],
+      "js": [
+        "content/common/baidu.js"
       ],
       "run_at": "document_end"
     }
@@ -151,11 +164,17 @@
     ],
     "persistent": false
   },
+  "oauth2": {
+    "client_id": "298805596445-1s5u5qrp34lq6nl1m6c1r27ol5fkkuv3.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/documents"
+    ]
+  },
   "commands": {
     "toggle-feature-foo": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y"
+        "default": "Alt+S",
+        "mac": "Alt+S"
       },
       "description": "Toggle feature foo"
     }

@@ -8,31 +8,27 @@ $(window).on('load', function () {
   port.onMessage.addListener(function (msg) {
     if (msg.response == 'editToolSetting') {
       if (msg.data.keyMapping) {
+        var focusEl;
 
-
-        // function insertCharacter(text) {
-        //   googleDocsUtil.setTextCurrentCursor(text);
-        //   // var googleDoc = googleDocsUtil.getGoogleDocument();
-        // }
-        var editingIframe;
         var findEditingIframe = setInterval(function () {
-          editingIframe = document.getElementsByTagName('iframe')[4];
-          console.log('...finding editIframe...');
-          if (editingIframe) {
+          // editingIframe = document.getElementsByTagName('iframe')[4];
+          focusEl = window.top.document;
+          
+          console.log('...finding focus element...');
+          if (focusEl.activeElement) {
+            focusEl = focusEl.activeElement;
+            function insertGoogleDoc(a) {
+              parseTexter = new rwGoogleTextParse;
+              parseTexter.CurrentWord = a;
+              parseTexter.InsertText(focusEl, parseTexter.CurrentWord);
+              newCaretPosition = parseTexter.CursorPosition;
+            }
             console.log('found');
-            Mousetrap(editingIframe.contentDocument).bind("alt+. h", function (e) {
+            Mousetrap(focusEl.contentDocument).bind("alt+. h", function (e) {
               e.preventDefault();
               console.log('called');
-              googleDocsUtil.setTextCurrentCursor("ḥ");
+              insertGoogleDoc('apple');
             })
-            // Mousetrap(editingIframe).bind({
-            //   "alt+. h": function(e) {
-            //     e.preventDefault();
-            //     console.log('called');
-            //     // insertCharacter("ḥ");
-            //     googleDocsUtil.setTextCurrentCursor("ḥ");
-            //   }
-            // })
             clearInterval(findEditingIframe);
           }
         }, 2000);
