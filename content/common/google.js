@@ -1,6 +1,5 @@
 $(window).on('load', function () {
-  var gmailDiv = closestDescendant(document.querySelector('#searchform'), 'a[href$="ogbl"]');
-  // var gmailDiv = closestDescendant(document.querySelector('#searchform'), 'a[href]');
+  var gmailDiv = closestDescendant(document.querySelector('#searchform'), '[data-pid="23"]');
   var parent = gmailDiv.parentNode;
   
   var oceanComponent = container({
