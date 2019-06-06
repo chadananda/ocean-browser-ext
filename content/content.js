@@ -118,6 +118,97 @@ $(window).on('load', function () {
             e.preventDefault();
             insertText(lastFocused, keyMapping["alt+' shift+u"]);
           },
+
+          /***************************************************
+          * UNDERSCORE LETTERS: SH, GH, DH, TH, KH, ZH, CH  *
+          * (MAY NEED TO USE MACRONS OR UNDERLINE INSTEAD!! *
+          ***************************************************/
+          "alt+u shift+s h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+s h"]);
+          },
+          "alt+u shift+s shift+h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+s shift+h"]);
+          },
+
+          "alt+u g h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u g h"]);
+          },
+          "alt+u shift+g h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+g h"]);
+          },
+          "alt+u shift+g shift+h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+g shift+h"]);
+          },
+
+          "alt+u d h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u d h"]);
+          },
+          "alt+u shift+d h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+d h"]);
+          },
+          "alt+u shift+d shift+h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+d shift+h"]);
+          },
+
+          "alt+u t h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u t h"]);
+          },
+          "alt+u shift+t h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+t h"]);
+          },
+          "alt+u shift+t shift+h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+t shift+h"]);
+          },
+
+          "alt+u k h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u k h"]);
+          },
+          "alt+u shift+k h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+k h"]);
+          },
+          "alt+u shift+k shift+h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+k shift+h"]);
+          },
+
+          "alt+u z h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u z h"]);
+          },
+          "alt+u shift+z h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+z h"]);
+          },
+          "alt+u shift+z shift+h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+z shift+h"]);
+          },
+
+          "alt+u c h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u c h"]);
+          },
+          "alt+u shift+c h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+c h"]);
+          },
+          "alt+u shift+c shift+h": function (e) {
+            e.preventDefault();
+            insertText(lastFocused, keyMapping["alt+u shift+c shift+h"]);
+          }
         })
       }
     }
