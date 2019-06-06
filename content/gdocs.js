@@ -1,4 +1,20 @@
 $(window).on('load', function () {
+  // get lanauge setting when user press shortkey to open ocean search
+  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.cmd) {
+      sendResponse({ res: 'success' });
+      loadAndPopupSearch_Cached();
+      setTimeout(function () {
+        if ($('search-widget-ocean')) $('search-widget-ocean').remove();
+        $("body").append(
+          "<search-widget-ocean language=" + request.cmd + "></search-widget-ocean>"
+        );
+        $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
+      }, 1000);
+
+    }
+    return true;
+  });
   var port = chrome.runtime.connect({
     name: 'ocean extension'
   })
@@ -13,7 +29,7 @@ $(window).on('load', function () {
         var findEditingIframe = setInterval(function () {
           // editingIframe = document.getElementsByTagName('iframe')[4];
           focusEl = window.top.document;
-          
+
           console.log('...finding focus element...');
           if (focusEl.activeElement) {
             focusEl = focusEl.activeElement;

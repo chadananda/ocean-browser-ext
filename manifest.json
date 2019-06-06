@@ -164,12 +164,6 @@
     ],
     "persistent": false
   },
-  "oauth2": {
-    "client_id": "298805596445-1s5u5qrp34lq6nl1m6c1r27ol5fkkuv3.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/documents"
-    ]
-  },
   "commands": {
     "toggle-feature-foo": {
       "suggested_key": {

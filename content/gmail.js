@@ -1,4 +1,18 @@
 $(window).on('load', function () {
+  loadAndPopupSearch_Cached();
+
+  // get lanauge setting when user press shortkey to open ocean search
+  chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.cmd) {
+      sendResponse({ res: 'success' });
+      if ($('search-widget-ocean')) $('search-widget-ocean').remove();
+      $("body").append(
+        "<search-widget-ocean language=" + request.cmd + "></search-widget-ocean>"
+      );
+      $('search-widget-ocean')[0].shadowRoot.querySelector('#search-popup').click();
+    }
+    return true;
+  });
   var port = chrome.runtime.connect({
     name: 'ocean extension'
   })
