@@ -110,38 +110,38 @@ var keyMapping = {
   "alt+' shift+i": "Í",
 
   "alt+' u": "ú",
-  "alt+' shift+u": "Ú"
+  "alt+' shift+u": "Ú",
 
   /***************************************************
    * UNDERSCORE LETTERS: SH, GH, DH, TH, KH, ZH, CH  *
    * (MAY NEED TO USE MACRONS OR UNDERLINE INSTEAD!! *
    ***************************************************/
-  // "alt+u shift+s h"      : "Sh",
-  // "alt+u shift+s shift+h": "SH",
+  "alt+u shift+s h"      : "S_h",
+  "alt+u shift+s shift+h": "S_H",
 
-  // "alt+u g h"            : "gh",
-  // "alt+u shift+g h"      : "Gh",
-  // "alt+u shift+g shift+h": "GH",
+  "alt+u g h"            : "g_h",
+  "alt+u shift+g h"      : "G_h",
+  "alt+u shift+g shift+h": "G_H",
 
-  // "alt+u d h"            : "dh",
-  // "alt+u shift+D h"      : "Dh",
-  // "alt+u shift+D shift+H": "DH",
+  "alt+u d h"            : "d_h",
+  "alt+u shift+d h"      : "D_h",
+  "alt+u shift+d shift+h": "D_H",
 
-  // "alt+u t h"            : "th",
-  // "alt+u shift+T h"      : "Th",
-  // "alt+u shift+T shift+H": "TH",
+  "alt+u t h"            : "t_h",
+  "alt+u shift+t h"      : "T_h",
+  "alt+u shift+t shift+h": "T_H",
 
-  // "alt+u k h"            : "kh",
-  // "alt+u shift+K h"      : "Kh",
-  // "alt+u shift+K shift+H": "KH",
+  "alt+u k h"            : "k_h",
+  "alt+u shift+k h"      : "K_h",
+  "alt+u shift+k shift+h": "K_H",
 
-  // "alt+u z h"            : "zh",
-  // "alt+u shift+Z h"      : "Zh",
-  // "alt+u shift+Z shift+H": "ZH",
+  "alt+u z h"            : "z_h",
+  "alt+u shift+z h"      : "Z_h",
+  "alt+u shift+z shift+h": "Z_H",
 
-  // "alt+u c h"            : "ch",
-  // "alt+u shift+C h"      : "Ch",
-  // "alt+u shift+C shift+H": "CH"
+  "alt+u c h"            : "c_h",
+  "alt+u shift+c h"      : "C_h",
+  "alt+u shift+c shift+h": "C_H"
 }
 
 
