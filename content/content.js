@@ -23,7 +23,7 @@ $(window).on('load', function () {
   })
   port.onMessage.addListener(function (msg) {
     if (msg.response == 'editToolSetting') {
-      if (msg.data.keyMapping) {
+      if (msg.data.keyMapping || msg.data.autoCorrect) {
         var lastFocused;
         $("input, textarea").focus(function () {
           lastFocused = document.activeElement;

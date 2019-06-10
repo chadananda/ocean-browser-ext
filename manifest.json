@@ -34,6 +34,7 @@
         "lib/jquery.min.js",
         "lib/mousetrap.js",
         "lib/mousetrap-bind-dictionary.js",
+        "lib/bahai-autocorrect.js",
         "content/helper.js",
         "content/content.js"
       ],
@@ -47,6 +48,7 @@
         "lib/jquery.min.js",
         "lib/mousetrap.js",
         "lib/mousetrap-bind-dictionary.js",
+        "lib/bahai-autocorrect.js",
         "lib/rwGoogleTextParse.js",
         "content/helper.js",
         "content/gdocs.js"
@@ -61,6 +63,7 @@
         "lib/jquery.min.js",
         "lib/mousetrap.js",
         "lib/mousetrap-bind-dictionary.js",
+        "lib/bahai-autocorrect.js",
         "content/helper.js",
         "content/gmail.js"
       ],
