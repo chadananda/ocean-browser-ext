@@ -208,6 +208,10 @@ $(window).on('load', function () {
           "alt+u shift+c shift+h": function (e) {
             e.preventDefault();
             insertText(lastFocused, keyMapping["alt+u shift+c shift+h"]);
+          },
+          // autocorrect when press space button
+          "space": function(e) {
+            autoCorrect(lastFocused);
           }
         })
       }
