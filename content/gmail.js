@@ -21,16 +21,7 @@ $(window).on('load', function () {
   })
   port.onMessage.addListener(function (msg) {
     if (msg.response = 'editToolSetting') {
-      if (msg.data.keyMapping) {
-        function insertCharacter(text) {
-          var selection = parent.getSelection();
-          var range = selection.getRangeAt(0);
-          range.deleteContents();
-          range.insertNode(document.createTextNode(text))
-          range.collapse(null, text.length);
-          range.detach();
-          return true;
-        }
+      if (msg.data.keyMapping || msg.data.autoCorrect) {
         // wait for 60s until find editcontent
         var focusEl;
         var findFocusEl = setInterval(function () {
@@ -44,47 +35,47 @@ $(window).on('load', function () {
                ***********************************/
               "alt+. h": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. h"]);
+                gmailInsertText(keyMapping["alt+. h"]);
               },
               "alt+. shift+h": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. shift+h"]);
+                gmailInsertText(keyMapping["alt+. shift+h"]);
               },
 
               "alt+. t": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. t"]);
+                gmailInsertText(keyMapping["alt+. t"]);
               },
               "alt+. shift+t": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. shift+t"]);
+                gmailInsertText(keyMapping["alt+. shift+t"]);
               },
 
               "alt+. z": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. z"]);
+                gmailInsertText(keyMapping["alt+. z"]);
               },
               "alt+. shift+z": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. shift+z"]);
+                gmailInsertText(keyMapping["alt+. shift+z"]);
               },
 
               "alt+. s": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. s"]);
+                gmailInsertText(keyMapping["alt+. s"]);
               },
               "alt+. shift+s": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. shift+s"]);
+                gmailInsertText(keyMapping["alt+. shift+s"]);
               },
 
               "alt+. d": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. d"]);
+                gmailInsertText(keyMapping["alt+. d"]);
               },
               "alt+. shift+d": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+. shift+d"]);
+                gmailInsertText(keyMapping["alt+. shift+d"]);
               },
 
               /****************************************************
@@ -92,11 +83,11 @@ $(window).on('load', function () {
                ****************************************************/
               "alt+' 9": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' 9"]);
+                gmailInsertText(keyMapping["alt+' 9"]);
               },
               "alt+' 6": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' 6"]);
+                gmailInsertText(keyMapping["alt+' 6"]);
               },
 
               /*****************************
@@ -104,27 +95,31 @@ $(window).on('load', function () {
                *****************************/
               "alt+' a": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' a"]);
+                gmailInsertText(keyMapping["alt+' a"]);
               },
               "alt+' shift+a": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' shift+a"]);
+                gmailInsertText(keyMapping["alt+' shift+a"]);
               },
               "alt+' i": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' i"]);
+                gmailInsertText(keyMapping["alt+' i"]);
               },
               "alt+' shift+i": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' shift+i"]);
+                gmailInsertText(keyMapping["alt+' shift+i"]);
               },
               "alt+' u": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' u"]);
+                gmailInsertText(keyMapping["alt+' u"]);
               },
               "alt+' shift+u": function (e) {
                 e.preventDefault();
-                insertCharacter(keyMapping["alt+' shift+u"]);
+                gmailInsertText(keyMapping["alt+' shift+u"]);
+              },
+              // autocorrect when space button is pressed
+              "space": function (e) {
+                gmailAutoCorrect(focusEl);
               }
             })
             clearInterval(findFocusEl);

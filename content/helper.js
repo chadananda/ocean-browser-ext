@@ -152,7 +152,7 @@ closestDescendant = function (root, selector) {
   return e.matches(selector) ? e : null;
 };
 
-// insert bahai-text when shortcut key is pressed
+// In common webpage, insert bahai-text when shortcut key is pressed
 insertText = function (lastFocused, text) {
   var input = lastFocused;
   if (input == undefined) {
@@ -194,8 +194,8 @@ insertText = function (lastFocused, text) {
   input.scrollTop = scrollPos;
 };
 
-// autocorrect when space button is pressed
-autoCorrect = function (lastFocused) {
+// commonAutoCorrect when space button is pressed
+commonAutoCorrect = function (lastFocused) {
   var fullArr = lastFocused.value.split(" ");
   var lastStr = fullArr[fullArr.length - 1];
   var bahaiAutocorrect = new BahaiAutocorrect(lastStr).correct().stripUnderlines();
@@ -204,5 +204,27 @@ autoCorrect = function (lastFocused) {
   fullArr.splice(-1, 1, fixedStr);
   var fullString = fullArr.join(" ");
   lastFocused.value = fullString;
+};
+
+// In Gmail, insert bahai text when shortcut key is pressed
+gmailInsertText = function (text) {
+  var selection = parent.getSelection();
+  var range = selection.getRangeAt(0);
+  range.deleteContents();
+  range.insertNode(document.createTextNode(text))
+  range.collapse(null, text.length);
+  range.detach();
+  return true;
 }
 
+// gmailAutoCorrect when space button is pressed
+gmailAutoCorrect = function (focusEl) {
+  var fullArr = focusEl.innerText.split(" ");
+  var lastStr = fullArr[fullArr.length - 1];
+  var bahaiAutocorrect = new BahaiAutocorrect(lastStr).correct().stripUnderlines();
+  var fixedStr = bahaiAutocorrect.toString();
+  gmailInsertText(fixedStr);
+  // fullArr.splice(-1, 1, fixedStr);
+  // var fullString = fullArr.join(" ");
+  // focusEl.innerText = fullString;
+}

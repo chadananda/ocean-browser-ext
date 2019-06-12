@@ -211,7 +211,7 @@ $(window).on('load', function () {
           },
           // autocorrect when press space button
           "space": function(e) {
-            autoCorrect(lastFocused);
+            commonAutoCorrect(lastFocused);
           }
         })
       }

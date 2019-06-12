@@ -12,33 +12,44 @@
 <body>
   <input>
   <textarea style="width: 500px; height: 300px; margin-left: 27%;"></textarea>
-  <!-- <script>
+  <script>
     var lastFocused;
-    $("input, textarea").focus(function () {
-      lastFocused = document.activeElement;
-      console.log(lastFocused)
-    });
+    // $("input, textarea").focus(function () {
+    //   lastFocused = document.activeElement;
+    // });
 
     $("input, textarea").addClass('mousetrap');
 
+    getNodePos = function (caretPos, fullArr) {
+
+    }
+    getElement = function () {
+      $("input, textarea").focus(function () {
+        lastFocused = document.activeElement;
+        console.log(lastFocused.value);
+        return lastFocused
+      });
+    }
     autoCorrect = function (lastFocused) {
+      console.log(lastFocused.value);
       var fullArr = lastFocused.value.split(" ");
       var lastStr = fullArr[fullArr.length - 1];
       var bahaiAutocorrect = new BahaiAutocorrect(lastStr).correct().stripUnderlines();
       var fixedStr = bahaiAutocorrect.toString();
       var caretPos = lastFocused.selectionStart;
-      console.log(caretPos);
-      console.log(fixedStr);
+      // console.log(caretPos);
+      // console.log(fixedStr);
       fullArr.splice(-1, 1, fixedStr);
       var fullString = fullArr.join(" ");
       lastFocused.value = fullString;
     }
     Mousetrap.bind({
       "space": function (e) {
-        autoCorrect(lastFocused);
+        console.log(getElement());
+        // autoCorrect(lastFocused);
       }
     })
-  </script> -->
+  </script>
 </body>
 
 </html>
